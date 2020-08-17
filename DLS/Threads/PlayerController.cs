@@ -59,8 +59,7 @@ namespace DLS.Threads
                         if (!blktOn && Entrypoint.BLightsEnabled && NativeFunction.Natives.IS_VEHICLE_STOPPED<bool>(veh))
                             NativeFunction.Natives.SET_VEHICLE_BRAKE_LIGHTS(veh, true);
                         if (!Entrypoint.keysLocked)
-                        {
-                            Controls.DisableControls();
+                        {                            
                             NativeFunction.Natives.SET_VEHICLE_RADIO_ENABLED(veh, false);
                             ActiveVehicle activeVeh = veh.GetActiveVehicle();
                             DLSModel vehDLS;
@@ -73,6 +72,7 @@ namespace DLS.Threads
                                 UIManager.IsUIOn = !UIManager.IsUIOn;
                             if (vehDLS != null)
                             {
+                                Controls.DisableControls();
                                 if (lastVehicle != veh)
                                 {
                                     lastVehicle = veh;
@@ -624,6 +624,7 @@ namespace DLS.Threads
                             }
                             else if (Entrypoint.SCforNDLS)
                             {
+                                Controls.DisableControls();
                                 #region Lights Manager
                                 if ((Game.IsKeyDown(Keys.F) || Game.IsControllerButtonDown(ControllerButtons.Y))
                                     && Vehicles.GetSirenKill(activeVeh) && activeVeh.SirenStage != SirenStage.Off)
