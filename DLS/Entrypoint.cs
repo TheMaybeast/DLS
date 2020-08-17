@@ -71,6 +71,9 @@ namespace DLS
             //Loads MPDATA audio
             NativeFunction.Natives.SET_AUDIO_FLAG("LoadMPData", true);
 
+            //If DLS controls lights/sirens on AI vehicles            
+            AILightsC = Settings.ReadKey("Settings", "AILightsControl").ToBoolean();
+
             //Creates player controller
             "Loading: DLS - Player Controller".ToLog();
             GameFiber.StartNew(delegate { PlayerController.Process(); }, "DLS - Player Controller");
@@ -78,7 +81,8 @@ namespace DLS
 
             //Creates special modes managers
             "Loading: DLS - Special Modes Managers".ToLog();
-            GameFiber.StartNew(delegate { SpecialModesManager.ProcessAI(); }, "DLS - Special Modes AI Manager");
+            if(AILightsC)
+                GameFiber.StartNew(delegate { SpecialModesManager.ProcessAI(); }, "DLS - Special Modes AI Manager");
             GameFiber.StartNew(delegate { SpecialModesManager.ProcessPlayer(); }, "DLS - Special Modes Player Manager");
             "Loaded: DLS - Special Modes Managers".ToLog();
 
@@ -88,10 +92,7 @@ namespace DLS
             "Loaded: DLS - Cleanup Manager".ToLog();
 
             //If DLS controls lights/sirens on non-DLS vehicles
-            SCforNDLS = Settings.ReadKey("Settings", "SirenControlNonDLS").ToBoolean();
-
-            //If DLS controls lights/sirens on AI vehicles            
-            AILightsC = Settings.ReadKey("Settings", "AILightsControl").ToBoolean();
+            SCforNDLS = Settings.ReadKey("Settings", "SirenControlNonDLS").ToBoolean();            
 
             //If DLS controls the indicators          
             IndEnabled = Settings.ReadKey("Settings", "IndEnabled").ToBoolean();
