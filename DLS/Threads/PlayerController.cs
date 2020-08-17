@@ -622,7 +622,7 @@ namespace DLS.Threads
                                     #endregion Siren Manager
                                 }
                             }
-                            else
+                            else if (Entrypoint.SCforNDLS)
                             {
                                 #region Lights Manager
                                 if ((Game.IsKeyDown(Keys.F) || Game.IsControllerButtonDown(ControllerButtons.Y))
