@@ -1,5 +1,6 @@
 ﻿namespace DLS
 {
+    using DLS.Utils;
     using Rage;
     internal static class SirenApply
     {
@@ -28,7 +29,7 @@
                 SirenEntry entry = setting.Sirens[i];
                 EmergencyLight light = els.Lights[i];
 
-                // Main light settings
+                // Main light settings                
                 light.Color = entry.LightColor;
                 light.Intensity = entry.Intensity;
                 light.LightGroup = entry.LightGroup;
@@ -38,6 +39,7 @@
                 light.Flash = entry.Flash;
                 light.SpotLight = entry.SpotLight;
                 light.CastShadows = entry.CastShadows;
+                light.Light = entry.Light;
 
                 // Corona settings
                 light.CoronaIntensity = entry.Corona.CoronaIntensity;
