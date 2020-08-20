@@ -60,7 +60,7 @@ namespace DLS.UI
                             UIManager.Ext1_On = new Sprite(Game.CreateTextureFromFile(file), new System.Drawing.Point(1920 - customUI.Width, 1080 - customUI.Height), new System.Drawing.Size(customUI.Width, customUI.Height));
                             break;
                         case "intlt_off":
-                            UIManager.Intlt_On = new Sprite(Game.CreateTextureFromFile(file), new System.Drawing.Point(1920 - customUI.Width, 1080 - customUI.Height), new System.Drawing.Size(customUI.Width, customUI.Height));
+                            UIManager.Intlt_Off = new Sprite(Game.CreateTextureFromFile(file), new System.Drawing.Point(1920 - customUI.Width, 1080 - customUI.Height), new System.Drawing.Size(customUI.Width, customUI.Height));
                             break;
                         case "intlt_on":
                             UIManager.Intlt_On = new Sprite(Game.CreateTextureFromFile(file), new System.Drawing.Point(1920 - customUI.Width, 1080 - customUI.Height), new System.Drawing.Size(customUI.Width, customUI.Height));
@@ -320,7 +320,7 @@ namespace DLS.UI
                             UIManager.Ext1_On = new Sprite(Game.CreateTextureFromFile(file), new System.Drawing.Point(1920 - customUI.Width, 1080 - customUI.Height), new System.Drawing.Size(customUI.Width, customUI.Height));
                             break;
                         case "intlt_off":
-                            UIManager.Intlt_On = new Sprite(Game.CreateTextureFromFile(file), new System.Drawing.Point(1920 - customUI.Width, 1080 - customUI.Height), new System.Drawing.Size(customUI.Width, customUI.Height));
+                            UIManager.Intlt_Off = new Sprite(Game.CreateTextureFromFile(file), new System.Drawing.Point(1920 - customUI.Width, 1080 - customUI.Height), new System.Drawing.Size(customUI.Width, customUI.Height));
                             break;
                         case "intlt_on":
                             UIManager.Intlt_On = new Sprite(Game.CreateTextureFromFile(file), new System.Drawing.Point(1920 - customUI.Width, 1080 - customUI.Height), new System.Drawing.Size(customUI.Width, customUI.Height));
