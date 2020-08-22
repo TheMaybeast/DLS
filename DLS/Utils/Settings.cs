@@ -21,9 +21,9 @@ namespace DLS.Utils
             return ini;
         }
 
-        public static string ReadKey(string sectionName, string keyName)
+        public static string ReadKey(string sectionName, string keyName, string defaultValue = "")
         {
-            var value = "";
+            var value = defaultValue;
             try
             {
                 var ini = InitializeIni();
