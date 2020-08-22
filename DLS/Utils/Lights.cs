@@ -27,7 +27,6 @@ namespace DLS.Utils
                     activeVeh.Vehicle.EmergencyLightingOverride = Vehicles.GetEL(activeVeh.Vehicle);
                     activeVeh.Vehicle.IsSirenOn = true;
                     activeVeh.Vehicle.IsSirenSilent = true;
-                    activeVeh.Vehicle.ShouldVehiclesYieldToThisVehicle = activeVeh.Vehicle.GetDLS().SpecialModes.LSAIYield.Stage1Yield.ToBoolean();
                     UpdateTA(false, activeVeh);
                     UpdateSB(activeVeh);
                     break;
@@ -35,7 +34,6 @@ namespace DLS.Utils
                     activeVeh.Vehicle.EmergencyLightingOverride = Vehicles.GetEL(activeVeh.Vehicle);
                     activeVeh.Vehicle.IsSirenOn = true;
                     activeVeh.Vehicle.IsSirenSilent = true;
-                    activeVeh.Vehicle.ShouldVehiclesYieldToThisVehicle = activeVeh.Vehicle.GetDLS().SpecialModes.LSAIYield.Stage2Yield.ToBoolean();
                     UpdateTA(false, activeVeh);
                     UpdateSB(activeVeh);
                     break;
@@ -43,7 +41,6 @@ namespace DLS.Utils
                     activeVeh.Vehicle.EmergencyLightingOverride = Vehicles.GetEL(activeVeh.Vehicle);
                     activeVeh.Vehicle.IsSirenOn = true;
                     activeVeh.Vehicle.IsSirenSilent = true;
-                    activeVeh.Vehicle.ShouldVehiclesYieldToThisVehicle = activeVeh.Vehicle.GetDLS().SpecialModes.LSAIYield.Stage3Yield.ToBoolean();
                     UpdateTA(false, activeVeh);
                     UpdateSB(activeVeh);
                     break;
@@ -51,7 +48,6 @@ namespace DLS.Utils
                     activeVeh.Vehicle.EmergencyLightingOverride = Vehicles.GetEL(activeVeh.Vehicle);
                     activeVeh.Vehicle.IsSirenOn = true;
                     activeVeh.Vehicle.IsSirenSilent = true;
-                    activeVeh.Vehicle.ShouldVehiclesYieldToThisVehicle = activeVeh.Vehicle.GetDLS().SpecialModes.LSAIYield.Custom1Yield.ToBoolean();
                     UpdateTA(false, activeVeh);
                     UpdateSB(activeVeh);
                     break;
@@ -59,7 +55,6 @@ namespace DLS.Utils
                     activeVeh.Vehicle.EmergencyLightingOverride = Vehicles.GetEL(activeVeh.Vehicle);
                     activeVeh.Vehicle.IsSirenOn = true;
                     activeVeh.Vehicle.IsSirenSilent = true;
-                    activeVeh.Vehicle.ShouldVehiclesYieldToThisVehicle = activeVeh.Vehicle.GetDLS().SpecialModes.LSAIYield.Custom2Yield.ToBoolean();
                     UpdateTA(false, activeVeh);
                     UpdateSB(activeVeh);
                     break;
