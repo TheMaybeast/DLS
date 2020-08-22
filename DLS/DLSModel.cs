@@ -137,6 +137,27 @@ namespace DLS
 
         [XmlElement("SteadyBurn")]
         public SteadyBurn SteadyBurn { get; set; } = new SteadyBurn();
+
+        [XmlElement("LSAIYield")]
+        public LSAIYield LSAIYield { get; set; } = new LSAIYield();
+    }
+
+    public class LSAIYield
+    {
+        [XmlElement("Stage1Yield")]
+        public string Stage1Yield { get; set; } = "false";
+
+        [XmlElement("Stage2Yield")]
+        public string Stage2Yield { get; set; } = "false";
+
+        [XmlElement("Stage3Yield")]
+        public string Stage3Yield { get; set; } = "true";
+
+        [XmlElement("Custom1Yield")]
+        public string Custom1Yield { get; set; } = "false";
+
+        [XmlElement("Custom2Yield")]
+        public string Custom2Yield { get; set; } = "false";
     }
 
     public class SteadyBurn
