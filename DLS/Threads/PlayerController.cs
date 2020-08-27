@@ -30,8 +30,7 @@ namespace DLS.Threads
                     Vehicle veh = Game.LocalPlayer.Character.CurrentVehicle;
                     while (veh && veh.IsEngineOn && veh.Driver == Game.LocalPlayer.Character
                         && !Game.IsPaused && veh.HasSiren)
-                    {
-                        GameFiber.Yield();
+                    {                        
                         bool tone1ButtonDown = Controls.IsDLSControlDown(DLSControls.SIREN_TONE1);
                         bool tone2ButtonDown = Controls.IsDLSControlDown(DLSControls.SIREN_TONE2);
                         bool tone3ButtonDown = Controls.IsDLSControlDown(DLSControls.SIREN_TONE3);
@@ -927,6 +926,7 @@ namespace DLS.Threads
                                 #endregion Siren Manager
                             }
                         }
+                        GameFiber.Yield();
                     }
                 }
             }
