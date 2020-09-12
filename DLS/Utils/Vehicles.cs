@@ -8,11 +8,11 @@ namespace DLS.Utils
 {
     class Vehicles
     {
-        public static List<DLSModel> GetAllModels()
+        public static Dictionary<Model, DLSModel> GetAllModels()
         {
             string path = @"Plugins\DLS\";
             _ = new DLSModel();
-            List<DLSModel> listModels = new List<DLSModel>();
+            Dictionary<Model, DLSModel> dictModels = new Dictionary<Model, DLSModel>();
             foreach (string file in Directory.EnumerateFiles(path, "*.xml"))
             {
                 try
@@ -20,31 +20,48 @@ namespace DLS.Utils
                     XmlSerializer mySerializer = new XmlSerializer(typeof(DLSModel));
                     StreamReader streamReader = new StreamReader(file);
 
-                    DLSModel model = (DLSModel)mySerializer.Deserialize(streamReader);
+                    DLSModel dlsModel = (DLSModel)mySerializer.Deserialize(streamReader);
                     streamReader.Close();
 
-                    model.Name = Game.GetHashKey(Path.GetFileNameWithoutExtension(file)).ToString();
+                    dlsModel.AvailableLightStages.Add(LightStage.Off);
+                    if (dlsModel.Sirens.Stage1Setting != null)
+                        dlsModel.AvailableLightStages.Add(LightStage.One);
+                    if (dlsModel.Sirens.Stage2Setting != null)
+                        dlsModel.AvailableLightStages.Add(LightStage.Two);
+                    if (dlsModel.Sirens.Stage3Setting != null)
+                        dlsModel.AvailableLightStages.Add(LightStage.Three);
 
-                    model.AvailableLightStages.Add(LightStage.Off);
-                    if (model.Sirens.Stage1Setting != null)
-                        model.AvailableLightStages.Add(LightStage.One);
-                    if (model.Sirens.Stage2Setting != null)
-                        model.AvailableLightStages.Add(LightStage.Two);
-                    if (model.Sirens.Stage3Setting != null)
-                        model.AvailableLightStages.Add(LightStage.Three);
+                    dlsModel.AvailableSirenStages.Add(SirenStage.Off);
+                    if (dlsModel.SoundSettings.Tone1 != "")
+                        dlsModel.AvailableSirenStages.Add(SirenStage.One);
+                    if (dlsModel.SoundSettings.Tone2 != "")
+                        dlsModel.AvailableSirenStages.Add(SirenStage.Two);
+                    if (dlsModel.SoundSettings.Tone3 != "")
+                        dlsModel.AvailableSirenStages.Add(SirenStage.Warning);
+                    if (dlsModel.SoundSettings.Tone4 != "")
+                        dlsModel.AvailableSirenStages.Add(SirenStage.Warning2);
 
-                    model.AvailableSirenStages.Add(SirenStage.Off);
-                    if (model.SoundSettings.Tone1 != "")
-                        model.AvailableSirenStages.Add(SirenStage.One);
-                    if (model.SoundSettings.Tone2 != "")
-                        model.AvailableSirenStages.Add(SirenStage.Two);
-                    if (model.SoundSettings.Tone3 != "")
-                        model.AvailableSirenStages.Add(SirenStage.Warning);
-                    if (model.SoundSettings.Tone4 != "")
-                        model.AvailableSirenStages.Add(SirenStage.Warning2);
-
-                    listModels.Add(model);
-                    ("Added: " + model.Name).ToLog();
+                    string affectedModels = dlsModel.Models.Trim();
+                    if (affectedModels.Length > 0) {
+                        foreach (string affectedModel in affectedModels.Split(','))
+                        {
+                            Model model = new Model(affectedModel);
+                            if (!dictModels.ContainsKey(model))
+                            {
+                                dictModels.Add(model, dlsModel);
+                                ("Added: " + affectedModel + " from " + Path.GetFileName(file)).ToLog();
+                            }
+                            else
+                            {
+                                ("WARNING: Conflict in " + file).ToLog();
+                            }
+                        }
+                    }
+                    else
+                    {
+                        dictModels.Add(new Model(Path.GetFileNameWithoutExtension(file)), dlsModel);                        
+                        ("Added: " + Path.GetFileNameWithoutExtension(file)).ToLog();
+                    }
                 }
                 catch (Exception e)
                 {
@@ -52,7 +69,7 @@ namespace DLS.Utils
                     Game.LogTrivial("VCF IMPORT ERROR (" + Path.GetFileNameWithoutExtension(file) + "): " + e.Message);
                 }
             }
-            return listModels;
+            return dictModels;
         }
 
         public static Dictionary<string, TAgroup> GetAllTAgroups()
@@ -89,7 +106,7 @@ namespace DLS.Utils
             DLSModel dlsModel = veh.GetDLS();
             if (activeVeh == null)
                 activeVeh = veh.GetActiveVehicle();
-            string name = dlsModel.Name + " | " + activeVeh.LightStage.ToString() + " | " + activeVeh.TAStage.ToString() + " | " + activeVeh.SBOn.ToString();
+            string name = veh.Model.Name + " | " + activeVeh.LightStage.ToString() + " | " + activeVeh.TAStage.ToString() + " | " + activeVeh.SBOn.ToString();
             uint key = Game.GetHashKey(name);
             EmergencyLighting eL;
             if (Entrypoint.UsedPool.Count > 0 && Entrypoint.UsedPool.ContainsKey(key))

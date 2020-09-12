@@ -95,7 +95,7 @@ namespace DLS.Threads
 
                                 if (dlsModel.DoesVehicleHaveLightStage(LightStage.Three)
                                     && veh.HasDriver
-                                    && veh.EmergencyLighting.Name != dlsModel.Name + " | " + activeVeh.LightStage.ToString() + " | " + activeVeh.TAStage.ToString() + " | " + activeVeh.SBOn.ToString())
+                                    && veh.EmergencyLighting.Name != veh.Model.Name + " | " + activeVeh.LightStage.ToString() + " | " + activeVeh.TAStage.ToString() + " | " + activeVeh.SBOn.ToString())
                                 {
                                     activeVeh.LightStage = LightStage.Three;
                                     Lights.Update(activeVeh);

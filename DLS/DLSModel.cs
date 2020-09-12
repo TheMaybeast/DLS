@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Xml.Serialization;
 
 namespace DLS
@@ -6,7 +7,8 @@ namespace DLS
     [XmlRoot("Model")]
     public class DLSModel
     {
-        public string Name { get; set; }
+        [XmlElement("Models")]
+        public string Models { get; set; } = "";
 
         [XmlElement("SpecialModes")]
         public SpecialModes SpecialModes { get; set; } = new SpecialModes();

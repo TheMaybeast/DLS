@@ -25,11 +25,8 @@ namespace DLS.Utils
         {
             if (!veh)
                 return null;
-            for (int i = 0; i < Entrypoint.dlsModels.Count; i++)
-            {
-                if (Entrypoint.dlsModels[i].Name == veh.Model.Hash.ToString())
-                    return Entrypoint.dlsModels[i];
-            }
+            if (Entrypoint.DLSModelsDict.ContainsKey(veh.Model))
+                return Entrypoint.DLSModelsDict[veh.Model];
             return null;
         }
         internal static ActiveVehicle GetActiveVehicle(this Vehicle veh)

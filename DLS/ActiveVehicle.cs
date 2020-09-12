@@ -8,7 +8,6 @@ namespace DLS
         public ActiveVehicle(Vehicle vehicle, bool playerVehicle = false, LightStage lightStage = LightStage.Off, SirenStage sirenStage = SirenStage.Off)
         {
             Vehicle = vehicle;
-            VehicleHash = 0;
             LightStage = lightStage;
             SirenStage = sirenStage;
             CurrentHash = 0;
@@ -61,12 +60,10 @@ namespace DLS
                     TAgroup = Entrypoint.tagroups[vehDLS.TrafficAdvisory.TAgroup];
                     TApatternCurrentIndex = Entrypoint.tagroups[vehDLS.TrafficAdvisory.TAgroup].GetIndexFromTAPatternName(vehDLS.TrafficAdvisory.DefaultTApattern);
                 }
-                VehicleHash = Game.GetHashKey(vehDLS.Name);
                 vehicle.EmergencyLightingOverride = Vehicles.GetEL(vehicle, this);
             }
         }
         public Vehicle Vehicle { get; set; }
-        public uint VehicleHash { get; set; }
         public LightStage LightStage { get; set; }
         public LightStage TempLightStage { get; set; }
         public bool TempUsed { get; set; } = true;

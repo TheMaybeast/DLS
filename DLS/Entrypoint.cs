@@ -13,7 +13,7 @@ namespace DLS
     internal class Entrypoint
     {
         //List of Configured DLSModels by .xml files
-        public static List<DLSModel> dlsModels = new List<DLSModel>();
+        public static Dictionary<Model, DLSModel> DLSModelsDict = new Dictionary<Model, DLSModel>();
         //Vehicles currently being managed by DLS
         public static List<ActiveVehicle> activeVehicles = new List<ActiveVehicle>();
         //List of All TAgroups
@@ -57,7 +57,7 @@ namespace DLS
             Game.LogTrivial($"LOADED DLS v{pluginInfo.Version}");
 
             //Load DLS Models
-            dlsModels = Vehicles.GetAllModels();
+            DLSModelsDict = Vehicles.GetAllModels();
             "Loaded: DLS Vehicle Configurations".ToLog();
 
             //Load TAgroups
