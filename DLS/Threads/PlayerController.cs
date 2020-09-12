@@ -23,12 +23,11 @@ namespace DLS.Threads
         public static void Process()
         {
             while (true)
-            {
-                GameFiber.Yield();
+            {                
                 if (Game.LocalPlayer.Character.IsInAnyVehicle(false))
                 {
                     Vehicle veh = Game.LocalPlayer.Character.CurrentVehicle;
-                    while (veh && veh.IsEngineOn && veh.Driver == Game.LocalPlayer.Character
+                    if (veh && veh.IsEngineOn && veh.Driver == Game.LocalPlayer.Character
                         && !Game.IsPaused && veh.HasSiren)
                     {                        
                         bool tone1ButtonDown = Controls.IsDLSControlDown(DLSControls.SIREN_TONE1);
@@ -926,9 +925,9 @@ namespace DLS.Threads
                                 #endregion Siren Manager
                             }
                         }
-                        GameFiber.Yield();
                     }
                 }
+                GameFiber.Yield();
             }
         }
     }
