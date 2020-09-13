@@ -29,7 +29,7 @@ namespace DLS.Threads
 
                 if (Game.LocalPlayer.Character.IsInAnyVehicle(false) && !Game.IsPaused &&
                     veh && veh.IsEngineOn && veh.Driver == Game.LocalPlayer.Character && veh.HasSiren)
-                {                    
+                {
                     bool tone1ButtonDown = Controls.IsDLSControlDown(DLSControls.SIREN_TONE1);
                     bool tone2ButtonDown = Controls.IsDLSControlDown(DLSControls.SIREN_TONE2);
                     bool tone3ButtonDown = Controls.IsDLSControlDown(DLSControls.SIREN_TONE3);
@@ -234,7 +234,7 @@ namespace DLS.Threads
                                             {
                                                 veh.EmergencyLightingOverride = Vehicles.GetEL(veh);
                                                 Lights.UpdateSB(activeVeh);
-                                                break;
+                                                continue;
                                             }
                                             activeVeh.LightStage = LightStage.Off;
                                             veh.ShouldVehiclesYieldToThisVehicle = true;
@@ -267,7 +267,7 @@ namespace DLS.Threads
                                         {
                                             veh.EmergencyLightingOverride = Vehicles.GetEL(veh);
                                             Lights.UpdateTA(true, activeVeh);
-                                            break;
+                                            continue;
                                         }
                                         activeVeh.LightStage = LightStage.Off;
                                         veh.ShouldVehiclesYieldToThisVehicle = true;
