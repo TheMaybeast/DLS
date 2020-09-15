@@ -57,14 +57,17 @@ namespace DLS
             Game.LogTrivial($"LOADED DLS v{pluginInfo.Version}");
 
             //Load DLS Models
+            "Loading: DLS Vehicle Configurations".ToLog();
             DLSModelsDict = Vehicles.GetAllModels();
             "Loaded: DLS Vehicle Configurations".ToLog();
 
             //Load TAgroups
+            "Loading: TAgroups".ToLog();
             tagroups = Vehicles.GetAllTAgroups();
             "Loaded: TAgroups".ToLog();
 
             //Loads Keys
+            "Loading: DLS Keys".ToLog();
             Controls.RefreshKeys();
             "Loaded: DLS Keys".ToLog();
 
