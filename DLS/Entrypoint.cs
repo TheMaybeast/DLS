@@ -34,6 +34,7 @@ namespace DLS
         public static bool BLightsEnabled = true;
         public static bool UIEnabled = true;
         public static bool SirenKill = false;
+        public static bool PatchExtras = false;
 
         public static void Main()
         {
@@ -110,6 +111,16 @@ namespace DLS
 
             //If Siren Kill is enabled
             SirenKill = Settings.ReadKey("Settings", "SirenKill").ToBoolean();
+
+            //If extra patch is enabled
+            PatchExtras = Settings.ReadKey("Settings", "PatchExtras").ToBoolean();
+
+            if (PatchExtras)
+            {
+                bool patched = ExtraRepairPatch.DisableExtraRepair();
+                if (patched) "Patched extra repair".ToLog();
+                else "Failed to patch extra repair".ToLog();
+            }
         }
 
         private static void OnUnload(bool isTerminating)
