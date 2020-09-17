@@ -50,7 +50,17 @@ namespace DLS.Utils
             // Only run once per session
             if (hasPatched.HasValue) return hasPatched.Value;
 
-            IAdvancedHookV* advancedHookService = CreateAdvHookService();
+            IAdvancedHookV* advancedHookService;
+            try
+            {
+                advancedHookService = CreateAdvHookService();
+            } catch (DllNotFoundException)
+            {
+                "AdvancedHookV.dll is missing or could not be loaded, unable to patch extra repair".ToLog();
+                hasPatched = false;
+                return hasPatched.Value;
+            }
+             
             if (!hasPatched.HasValue && advancedHookService != null)
             {
                 var vTable = advancedHookService->VTable;
