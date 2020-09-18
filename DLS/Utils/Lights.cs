@@ -870,6 +870,11 @@ namespace DLS.Utils
                     }
                 }
             }
+
+            if(taCalled)
+            {
+                UpdateExtras(activeVeh);
+            }
         }
 
         public static void UpdateSB(ActiveVehicle activeVeh)
@@ -888,14 +893,11 @@ namespace DLS.Utils
                 }
                 else
                 {
-                    if (activeVeh.TAStage == TAStage.Off)
-                        activeVeh.Vehicle.EmergencyLightingOverride = Vehicles.GetEL(activeVeh.Vehicle);
-                    else
+                    activeVeh.Vehicle.EmergencyLightingOverride = Vehicles.GetEL(activeVeh.Vehicle);
+                    if (activeVeh.TAStage != TAStage.Off)
                     {
-                        activeVeh.Vehicle.EmergencyLightingOverride = Vehicles.GetEL(activeVeh.Vehicle);
                         UpdateTA(true, activeVeh);
                     }
-
                 }
             }
         }
