@@ -128,16 +128,19 @@ namespace DLS.Utils
                                 {
                                     activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = "00110000110000110000110000110000";
                                     activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                    if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                 }
                                 foreach (int i in dlsModel.TrafficAdvisory.c.Split(',').Select(n => int.Parse(n)).ToList())
                                 {
                                     activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = "11000011000011000011000011000011";
                                     activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                    if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                 }
                                 foreach (int i in dlsModel.TrafficAdvisory.r.Split(',').Select(n => int.Parse(n)).ToList())
                                 {
                                     activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = "00110000110000110000110000110000";
                                     activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                    if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                 }
                                 break;
                             case "four":
@@ -145,22 +148,26 @@ namespace DLS.Utils
                                 {
                                     activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = "00110000110000110000110000110000";
                                     activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                    if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                 }
                                 foreach (int i in dlsModel.TrafficAdvisory.cl.Split(',').Select(n => int.Parse(n)).ToList())
                                 {
                                     activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = "11000011000011000011000011000000";
                                     activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                    if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
 
                                 }
                                 foreach (int i in dlsModel.TrafficAdvisory.cr.Split(',').Select(n => int.Parse(n)).ToList())
                                 {
                                     activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = "11000011000011000011000011000000";
                                     activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                    if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                 }
                                 foreach (int i in dlsModel.TrafficAdvisory.r.Split(',').Select(n => int.Parse(n)).ToList())
                                 {
                                     activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = "00110000110000110000110000110000";
                                     activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                    if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                 }
                                 break;
                             case "five":
@@ -168,26 +175,31 @@ namespace DLS.Utils
                                 {
                                     activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = "00001100000011000000110000001100";
                                     activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                    if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                 }
                                 foreach (int i in dlsModel.TrafficAdvisory.cl.Split(',').Select(n => int.Parse(n)).ToList())
                                 {
                                     activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = "00110000001100000011000000110000";
                                     activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                    if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                 }
                                 foreach (int i in dlsModel.TrafficAdvisory.c.Split(',').Select(n => int.Parse(n)).ToList())
                                 {
                                     activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = "11000000110000001100000011000000";
                                     activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                    if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                 }
                                 foreach (int i in dlsModel.TrafficAdvisory.cr.Split(',').Select(n => int.Parse(n)).ToList())
                                 {
                                     activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = "00110000001100000011000000110000";
                                     activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                    if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                 }
                                 foreach (int i in dlsModel.TrafficAdvisory.r.Split(',').Select(n => int.Parse(n)).ToList())
                                 {
                                     activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = "00001100000011000000110000001100";
                                     activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                    if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                 }
                                 break;
                             case "six":
@@ -195,31 +207,37 @@ namespace DLS.Utils
                                 {
                                     activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = "00001100000011000000110000001100";
                                     activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                    if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                 }
                                 foreach (int i in dlsModel.TrafficAdvisory.el.Split(',').Select(n => int.Parse(n)).ToList())
                                 {
                                     activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = "00110000001100000011000000110000";
                                     activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                    if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                 }
                                 foreach (int i in dlsModel.TrafficAdvisory.cl.Split(',').Select(n => int.Parse(n)).ToList())
                                 {
                                     activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = "11000000110000001100000011000000";
                                     activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                    if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                 }
                                 foreach (int i in dlsModel.TrafficAdvisory.cr.Split(',').Select(n => int.Parse(n)).ToList())
                                 {
                                     activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = "11000000110000001100000011000000";
                                     activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                    if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                 }
                                 foreach (int i in dlsModel.TrafficAdvisory.er.Split(',').Select(n => int.Parse(n)).ToList())
                                 {
                                     activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = "00110000001100000011000000110000";
                                     activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                    if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                 }
                                 foreach (int i in dlsModel.TrafficAdvisory.r.Split(',').Select(n => int.Parse(n)).ToList())
                                 {
                                     activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = "00001100000011000000110000001100";
                                     activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                    if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                 }
                                 break;
                         }
@@ -235,16 +253,19 @@ namespace DLS.Utils
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = "00000000000000000000000000000000";
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     foreach (int i in dlsModel.TrafficAdvisory.c.Split(',').Select(n => int.Parse(n)).ToList())
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = "00000000000000000000000000000000";
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     foreach (int i in dlsModel.TrafficAdvisory.r.Split(',').Select(n => int.Parse(n)).ToList())
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = "00000000000000000000000000000000";
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     break;
                                 case "four":
@@ -252,22 +273,26 @@ namespace DLS.Utils
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = "00000000000000000000000000000000";
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     foreach (int i in dlsModel.TrafficAdvisory.cl.Split(',').Select(n => int.Parse(n)).ToList())
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = "00000000000000000000000000000000";
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
 
                                     }
                                     foreach (int i in dlsModel.TrafficAdvisory.cr.Split(',').Select(n => int.Parse(n)).ToList())
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = "00000000000000000000000000000000";
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     foreach (int i in dlsModel.TrafficAdvisory.r.Split(',').Select(n => int.Parse(n)).ToList())
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = "00000000000000000000000000000000";
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     break;
                                 case "five":
@@ -275,26 +300,31 @@ namespace DLS.Utils
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = "00000000000000000000000000000000";
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     foreach (int i in dlsModel.TrafficAdvisory.cl.Split(',').Select(n => int.Parse(n)).ToList())
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = "00000000000000000000000000000000";
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     foreach (int i in dlsModel.TrafficAdvisory.c.Split(',').Select(n => int.Parse(n)).ToList())
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = "00000000000000000000000000000000";
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     foreach (int i in dlsModel.TrafficAdvisory.cr.Split(',').Select(n => int.Parse(n)).ToList())
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = "00000000000000000000000000000000";
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     foreach (int i in dlsModel.TrafficAdvisory.r.Split(',').Select(n => int.Parse(n)).ToList())
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = "00000000000000000000000000000000";
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     break;
                                 case "six":
@@ -302,31 +332,37 @@ namespace DLS.Utils
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = "00000000000000000000000000000000";
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     foreach (int i in dlsModel.TrafficAdvisory.el.Split(',').Select(n => int.Parse(n)).ToList())
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = "00000000000000000000000000000000";
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     foreach (int i in dlsModel.TrafficAdvisory.cl.Split(',').Select(n => int.Parse(n)).ToList())
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = "00000000000000000000000000000000";
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     foreach (int i in dlsModel.TrafficAdvisory.cr.Split(',').Select(n => int.Parse(n)).ToList())
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = "00000000000000000000000000000000";
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     foreach (int i in dlsModel.TrafficAdvisory.er.Split(',').Select(n => int.Parse(n)).ToList())
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = "00000000000000000000000000000000";
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     foreach (int i in dlsModel.TrafficAdvisory.r.Split(',').Select(n => int.Parse(n)).ToList())
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = "00000000000000000000000000000000";
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     break;
                             }
@@ -347,16 +383,19 @@ namespace DLS.Utils
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = activeVeh.TAgroup.TaPatterns[activeVeh.TApatternCurrentIndex].Three.Left.L;
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     foreach (int i in dlsModel.TrafficAdvisory.c.Split(',').Select(n => int.Parse(n)).ToList())
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = activeVeh.TAgroup.TaPatterns[activeVeh.TApatternCurrentIndex].Three.Left.C;
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     foreach (int i in dlsModel.TrafficAdvisory.r.Split(',').Select(n => int.Parse(n)).ToList())
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = activeVeh.TAgroup.TaPatterns[activeVeh.TApatternCurrentIndex].Three.Left.R;
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     break;
                                 case "four":
@@ -364,21 +403,25 @@ namespace DLS.Utils
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = activeVeh.TAgroup.TaPatterns[activeVeh.TApatternCurrentIndex].Four.Left.L;
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     foreach (int i in dlsModel.TrafficAdvisory.cl.Split(',').Select(n => int.Parse(n)).ToList())
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = activeVeh.TAgroup.TaPatterns[activeVeh.TApatternCurrentIndex].Four.Left.CL;
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     foreach (int i in dlsModel.TrafficAdvisory.cr.Split(',').Select(n => int.Parse(n)).ToList())
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = activeVeh.TAgroup.TaPatterns[activeVeh.TApatternCurrentIndex].Four.Left.CR;
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     foreach (int i in dlsModel.TrafficAdvisory.r.Split(',').Select(n => int.Parse(n)).ToList())
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = activeVeh.TAgroup.TaPatterns[activeVeh.TApatternCurrentIndex].Four.Left.R;
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     break;
                                 case "five":
@@ -386,26 +429,31 @@ namespace DLS.Utils
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = activeVeh.TAgroup.TaPatterns[activeVeh.TApatternCurrentIndex].Five.Left.L;
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     foreach (int i in dlsModel.TrafficAdvisory.cl.Split(',').Select(n => int.Parse(n)).ToList())
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = activeVeh.TAgroup.TaPatterns[activeVeh.TApatternCurrentIndex].Five.Left.CL;
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     foreach (int i in dlsModel.TrafficAdvisory.c.Split(',').Select(n => int.Parse(n)).ToList())
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = activeVeh.TAgroup.TaPatterns[activeVeh.TApatternCurrentIndex].Five.Left.C;
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     foreach (int i in dlsModel.TrafficAdvisory.cr.Split(',').Select(n => int.Parse(n)).ToList())
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = activeVeh.TAgroup.TaPatterns[activeVeh.TApatternCurrentIndex].Five.Left.CR;
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     foreach (int i in dlsModel.TrafficAdvisory.r.Split(',').Select(n => int.Parse(n)).ToList())
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = activeVeh.TAgroup.TaPatterns[activeVeh.TApatternCurrentIndex].Five.Left.R;
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     break;
                                 case "six":
@@ -413,31 +461,43 @@ namespace DLS.Utils
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = activeVeh.TAgroup.TaPatterns[activeVeh.TApatternCurrentIndex].Six.Left.L;
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
+
                                     }
                                     foreach (int i in dlsModel.TrafficAdvisory.el.Split(',').Select(n => int.Parse(n)).ToList())
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = activeVeh.TAgroup.TaPatterns[activeVeh.TApatternCurrentIndex].Six.Left.EL;
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
+
                                     }
                                     foreach (int i in dlsModel.TrafficAdvisory.cl.Split(',').Select(n => int.Parse(n)).ToList())
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = activeVeh.TAgroup.TaPatterns[activeVeh.TApatternCurrentIndex].Six.Left.CL;
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
+
                                     }
                                     foreach (int i in dlsModel.TrafficAdvisory.cr.Split(',').Select(n => int.Parse(n)).ToList())
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = activeVeh.TAgroup.TaPatterns[activeVeh.TApatternCurrentIndex].Six.Left.CR;
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
+
                                     }
                                     foreach (int i in dlsModel.TrafficAdvisory.er.Split(',').Select(n => int.Parse(n)).ToList())
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = activeVeh.TAgroup.TaPatterns[activeVeh.TApatternCurrentIndex].Six.Left.ER;
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
+
                                     }
                                     foreach (int i in dlsModel.TrafficAdvisory.r.Split(',').Select(n => int.Parse(n)).ToList())
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = activeVeh.TAgroup.TaPatterns[activeVeh.TApatternCurrentIndex].Six.Left.R;
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
+
                                     }
                                     break;
                             }
@@ -450,16 +510,19 @@ namespace DLS.Utils
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = activeVeh.TAgroup.TaPatterns[activeVeh.TApatternCurrentIndex].Three.Diverge.L;
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     foreach (int i in dlsModel.TrafficAdvisory.c.Split(',').Select(n => int.Parse(n)).ToList())
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = activeVeh.TAgroup.TaPatterns[activeVeh.TApatternCurrentIndex].Three.Diverge.C;
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     foreach (int i in dlsModel.TrafficAdvisory.r.Split(',').Select(n => int.Parse(n)).ToList())
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = activeVeh.TAgroup.TaPatterns[activeVeh.TApatternCurrentIndex].Three.Diverge.R;
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     break;
                                 case "four":
@@ -467,21 +530,25 @@ namespace DLS.Utils
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = activeVeh.TAgroup.TaPatterns[activeVeh.TApatternCurrentIndex].Four.Diverge.L;
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     foreach (int i in dlsModel.TrafficAdvisory.cl.Split(',').Select(n => int.Parse(n)).ToList())
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = activeVeh.TAgroup.TaPatterns[activeVeh.TApatternCurrentIndex].Four.Diverge.CL;
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     foreach (int i in dlsModel.TrafficAdvisory.cr.Split(',').Select(n => int.Parse(n)).ToList())
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = activeVeh.TAgroup.TaPatterns[activeVeh.TApatternCurrentIndex].Four.Diverge.CR;
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     foreach (int i in dlsModel.TrafficAdvisory.r.Split(',').Select(n => int.Parse(n)).ToList())
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = activeVeh.TAgroup.TaPatterns[activeVeh.TApatternCurrentIndex].Four.Diverge.R;
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     break;
                                 case "five":
@@ -489,26 +556,31 @@ namespace DLS.Utils
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = activeVeh.TAgroup.TaPatterns[activeVeh.TApatternCurrentIndex].Five.Diverge.L;
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     foreach (int i in dlsModel.TrafficAdvisory.cl.Split(',').Select(n => int.Parse(n)).ToList())
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = activeVeh.TAgroup.TaPatterns[activeVeh.TApatternCurrentIndex].Five.Diverge.CL;
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     foreach (int i in dlsModel.TrafficAdvisory.c.Split(',').Select(n => int.Parse(n)).ToList())
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = activeVeh.TAgroup.TaPatterns[activeVeh.TApatternCurrentIndex].Five.Diverge.C;
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     foreach (int i in dlsModel.TrafficAdvisory.cr.Split(',').Select(n => int.Parse(n)).ToList())
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = activeVeh.TAgroup.TaPatterns[activeVeh.TApatternCurrentIndex].Five.Diverge.CR;
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     foreach (int i in dlsModel.TrafficAdvisory.r.Split(',').Select(n => int.Parse(n)).ToList())
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = activeVeh.TAgroup.TaPatterns[activeVeh.TApatternCurrentIndex].Five.Diverge.R;
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     break;
                                 case "six":
@@ -516,31 +588,37 @@ namespace DLS.Utils
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = activeVeh.TAgroup.TaPatterns[activeVeh.TApatternCurrentIndex].Six.Diverge.L;
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     foreach (int i in dlsModel.TrafficAdvisory.el.Split(',').Select(n => int.Parse(n)).ToList())
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = activeVeh.TAgroup.TaPatterns[activeVeh.TApatternCurrentIndex].Six.Diverge.EL;
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     foreach (int i in dlsModel.TrafficAdvisory.cl.Split(',').Select(n => int.Parse(n)).ToList())
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = activeVeh.TAgroup.TaPatterns[activeVeh.TApatternCurrentIndex].Six.Diverge.CL;
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     foreach (int i in dlsModel.TrafficAdvisory.cr.Split(',').Select(n => int.Parse(n)).ToList())
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = activeVeh.TAgroup.TaPatterns[activeVeh.TApatternCurrentIndex].Six.Diverge.CR;
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     foreach (int i in dlsModel.TrafficAdvisory.er.Split(',').Select(n => int.Parse(n)).ToList())
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = activeVeh.TAgroup.TaPatterns[activeVeh.TApatternCurrentIndex].Six.Diverge.ER;
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     foreach (int i in dlsModel.TrafficAdvisory.r.Split(',').Select(n => int.Parse(n)).ToList())
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = activeVeh.TAgroup.TaPatterns[activeVeh.TApatternCurrentIndex].Six.Diverge.R;
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     break;
                             }
@@ -553,16 +631,19 @@ namespace DLS.Utils
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = activeVeh.TAgroup.TaPatterns[activeVeh.TApatternCurrentIndex].Three.Right.L;
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     foreach (int i in dlsModel.TrafficAdvisory.c.Split(',').Select(n => int.Parse(n)).ToList())
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = activeVeh.TAgroup.TaPatterns[activeVeh.TApatternCurrentIndex].Three.Right.C;
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     foreach (int i in dlsModel.TrafficAdvisory.r.Split(',').Select(n => int.Parse(n)).ToList())
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = activeVeh.TAgroup.TaPatterns[activeVeh.TApatternCurrentIndex].Three.Right.R;
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     break;
                                 case "four":
@@ -570,21 +651,25 @@ namespace DLS.Utils
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = activeVeh.TAgroup.TaPatterns[activeVeh.TApatternCurrentIndex].Four.Right.L;
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     foreach (int i in dlsModel.TrafficAdvisory.cl.Split(',').Select(n => int.Parse(n)).ToList())
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = activeVeh.TAgroup.TaPatterns[activeVeh.TApatternCurrentIndex].Four.Right.CL;
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     foreach (int i in dlsModel.TrafficAdvisory.cr.Split(',').Select(n => int.Parse(n)).ToList())
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = activeVeh.TAgroup.TaPatterns[activeVeh.TApatternCurrentIndex].Four.Right.CR;
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     foreach (int i in dlsModel.TrafficAdvisory.r.Split(',').Select(n => int.Parse(n)).ToList())
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = activeVeh.TAgroup.TaPatterns[activeVeh.TApatternCurrentIndex].Four.Right.R;
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     break;
                                 case "five":
@@ -592,26 +677,31 @@ namespace DLS.Utils
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = activeVeh.TAgroup.TaPatterns[activeVeh.TApatternCurrentIndex].Five.Right.L;
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     foreach (int i in dlsModel.TrafficAdvisory.cl.Split(',').Select(n => int.Parse(n)).ToList())
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = activeVeh.TAgroup.TaPatterns[activeVeh.TApatternCurrentIndex].Five.Right.CL;
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     foreach (int i in dlsModel.TrafficAdvisory.c.Split(',').Select(n => int.Parse(n)).ToList())
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = activeVeh.TAgroup.TaPatterns[activeVeh.TApatternCurrentIndex].Five.Right.C;
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     foreach (int i in dlsModel.TrafficAdvisory.cr.Split(',').Select(n => int.Parse(n)).ToList())
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = activeVeh.TAgroup.TaPatterns[activeVeh.TApatternCurrentIndex].Five.Right.CR;
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     foreach (int i in dlsModel.TrafficAdvisory.r.Split(',').Select(n => int.Parse(n)).ToList())
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = activeVeh.TAgroup.TaPatterns[activeVeh.TApatternCurrentIndex].Five.Right.R;
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     break;
                                 case "six":
@@ -619,31 +709,37 @@ namespace DLS.Utils
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = activeVeh.TAgroup.TaPatterns[activeVeh.TApatternCurrentIndex].Six.Right.L;
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     foreach (int i in dlsModel.TrafficAdvisory.el.Split(',').Select(n => int.Parse(n)).ToList())
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = activeVeh.TAgroup.TaPatterns[activeVeh.TApatternCurrentIndex].Six.Right.EL;
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     foreach (int i in dlsModel.TrafficAdvisory.cl.Split(',').Select(n => int.Parse(n)).ToList())
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = activeVeh.TAgroup.TaPatterns[activeVeh.TApatternCurrentIndex].Six.Right.CL;
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     foreach (int i in dlsModel.TrafficAdvisory.cr.Split(',').Select(n => int.Parse(n)).ToList())
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = activeVeh.TAgroup.TaPatterns[activeVeh.TApatternCurrentIndex].Six.Right.CR;
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     foreach (int i in dlsModel.TrafficAdvisory.er.Split(',').Select(n => int.Parse(n)).ToList())
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = activeVeh.TAgroup.TaPatterns[activeVeh.TApatternCurrentIndex].Six.Right.ER;
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     foreach (int i in dlsModel.TrafficAdvisory.r.Split(',').Select(n => int.Parse(n)).ToList())
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = activeVeh.TAgroup.TaPatterns[activeVeh.TApatternCurrentIndex].Six.Right.R;
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     break;
                             }
@@ -656,16 +752,19 @@ namespace DLS.Utils
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = activeVeh.TAgroup.TaPatterns[activeVeh.TApatternCurrentIndex].Three.Warn.L;
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     foreach (int i in dlsModel.TrafficAdvisory.c.Split(',').Select(n => int.Parse(n)).ToList())
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = activeVeh.TAgroup.TaPatterns[activeVeh.TApatternCurrentIndex].Three.Warn.C;
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     foreach (int i in dlsModel.TrafficAdvisory.r.Split(',').Select(n => int.Parse(n)).ToList())
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = activeVeh.TAgroup.TaPatterns[activeVeh.TApatternCurrentIndex].Three.Warn.R;
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     break;
                                 case "four":
@@ -673,21 +772,25 @@ namespace DLS.Utils
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = activeVeh.TAgroup.TaPatterns[activeVeh.TApatternCurrentIndex].Four.Warn.L;
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     foreach (int i in dlsModel.TrafficAdvisory.cl.Split(',').Select(n => int.Parse(n)).ToList())
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = activeVeh.TAgroup.TaPatterns[activeVeh.TApatternCurrentIndex].Four.Warn.CL;
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     foreach (int i in dlsModel.TrafficAdvisory.cr.Split(',').Select(n => int.Parse(n)).ToList())
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = activeVeh.TAgroup.TaPatterns[activeVeh.TApatternCurrentIndex].Four.Warn.CR;
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     foreach (int i in dlsModel.TrafficAdvisory.r.Split(',').Select(n => int.Parse(n)).ToList())
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = activeVeh.TAgroup.TaPatterns[activeVeh.TApatternCurrentIndex].Four.Warn.R;
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     break;
                                 case "five":
@@ -695,26 +798,31 @@ namespace DLS.Utils
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = activeVeh.TAgroup.TaPatterns[activeVeh.TApatternCurrentIndex].Five.Warn.L;
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     foreach (int i in dlsModel.TrafficAdvisory.cl.Split(',').Select(n => int.Parse(n)).ToList())
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = activeVeh.TAgroup.TaPatterns[activeVeh.TApatternCurrentIndex].Five.Warn.CL;
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     foreach (int i in dlsModel.TrafficAdvisory.c.Split(',').Select(n => int.Parse(n)).ToList())
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = activeVeh.TAgroup.TaPatterns[activeVeh.TApatternCurrentIndex].Five.Warn.C;
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     foreach (int i in dlsModel.TrafficAdvisory.cr.Split(',').Select(n => int.Parse(n)).ToList())
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = activeVeh.TAgroup.TaPatterns[activeVeh.TApatternCurrentIndex].Five.Warn.CR;
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     foreach (int i in dlsModel.TrafficAdvisory.r.Split(',').Select(n => int.Parse(n)).ToList())
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = activeVeh.TAgroup.TaPatterns[activeVeh.TApatternCurrentIndex].Five.Warn.R;
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     break;
                                 case "six":
@@ -722,31 +830,37 @@ namespace DLS.Utils
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = activeVeh.TAgroup.TaPatterns[activeVeh.TApatternCurrentIndex].Six.Warn.L;
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     foreach (int i in dlsModel.TrafficAdvisory.el.Split(',').Select(n => int.Parse(n)).ToList())
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = activeVeh.TAgroup.TaPatterns[activeVeh.TApatternCurrentIndex].Six.Warn.EL;
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     foreach (int i in dlsModel.TrafficAdvisory.cl.Split(',').Select(n => int.Parse(n)).ToList())
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = activeVeh.TAgroup.TaPatterns[activeVeh.TApatternCurrentIndex].Six.Warn.CL;
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     foreach (int i in dlsModel.TrafficAdvisory.cr.Split(',').Select(n => int.Parse(n)).ToList())
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = activeVeh.TAgroup.TaPatterns[activeVeh.TApatternCurrentIndex].Six.Warn.CR;
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     foreach (int i in dlsModel.TrafficAdvisory.er.Split(',').Select(n => int.Parse(n)).ToList())
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = activeVeh.TAgroup.TaPatterns[activeVeh.TApatternCurrentIndex].Six.Warn.ER;
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     foreach (int i in dlsModel.TrafficAdvisory.r.Split(',').Select(n => int.Parse(n)).ToList())
                                     {
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = activeVeh.TAgroup.TaPatterns[activeVeh.TApatternCurrentIndex].Six.Warn.R;
                                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                        if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                     }
                                     break;
                             }
@@ -761,16 +875,19 @@ namespace DLS.Utils
                                         {
                                             activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = "00000000000000000000000000000000";
                                             activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                            if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                         }
                                         foreach (int i in dlsModel.TrafficAdvisory.c.Split(',').Select(n => int.Parse(n)).ToList())
                                         {
                                             activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = "00000000000000000000000000000000";
                                             activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                            if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                         }
                                         foreach (int i in dlsModel.TrafficAdvisory.r.Split(',').Select(n => int.Parse(n)).ToList())
                                         {
                                             activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = "00000000000000000000000000000000";
                                             activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                            if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                         }
                                         break;
                                     case "four":
@@ -778,22 +895,26 @@ namespace DLS.Utils
                                         {
                                             activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = "00000000000000000000000000000000";
                                             activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                            if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                         }
                                         foreach (int i in dlsModel.TrafficAdvisory.cl.Split(',').Select(n => int.Parse(n)).ToList())
                                         {
                                             activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = "00000000000000000000000000000000";
                                             activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                            if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
 
                                         }
                                         foreach (int i in dlsModel.TrafficAdvisory.cr.Split(',').Select(n => int.Parse(n)).ToList())
                                         {
                                             activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = "00000000000000000000000000000000";
                                             activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                            if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                         }
                                         foreach (int i in dlsModel.TrafficAdvisory.r.Split(',').Select(n => int.Parse(n)).ToList())
                                         {
                                             activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = "00000000000000000000000000000000";
                                             activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                            if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                         }
                                         break;
                                     case "five":
@@ -801,26 +922,31 @@ namespace DLS.Utils
                                         {
                                             activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = "00000000000000000000000000000000";
                                             activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                            if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                         }
                                         foreach (int i in dlsModel.TrafficAdvisory.cl.Split(',').Select(n => int.Parse(n)).ToList())
                                         {
                                             activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = "00000000000000000000000000000000";
                                             activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                            if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                         }
                                         foreach (int i in dlsModel.TrafficAdvisory.c.Split(',').Select(n => int.Parse(n)).ToList())
                                         {
                                             activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = "00000000000000000000000000000000";
                                             activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                            if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                         }
                                         foreach (int i in dlsModel.TrafficAdvisory.cr.Split(',').Select(n => int.Parse(n)).ToList())
                                         {
                                             activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = "00000000000000000000000000000000";
                                             activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                            if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                         }
                                         foreach (int i in dlsModel.TrafficAdvisory.r.Split(',').Select(n => int.Parse(n)).ToList())
                                         {
                                             activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = "00000000000000000000000000000000";
                                             activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                            if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                         }
                                         break;
                                     case "six":
@@ -828,31 +954,37 @@ namespace DLS.Utils
                                         {
                                             activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = "00000000000000000000000000000000";
                                             activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                            if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                         }
                                         foreach (int i in dlsModel.TrafficAdvisory.el.Split(',').Select(n => int.Parse(n)).ToList())
                                         {
                                             activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = "00000000000000000000000000000000";
                                             activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                            if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                         }
                                         foreach (int i in dlsModel.TrafficAdvisory.cl.Split(',').Select(n => int.Parse(n)).ToList())
                                         {
                                             activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = "00000000000000000000000000000000";
                                             activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                            if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                         }
                                         foreach (int i in dlsModel.TrafficAdvisory.cr.Split(',').Select(n => int.Parse(n)).ToList())
                                         {
                                             activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = "00000000000000000000000000000000";
                                             activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                            if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                         }
                                         foreach (int i in dlsModel.TrafficAdvisory.er.Split(',').Select(n => int.Parse(n)).ToList())
                                         {
                                             activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = "00000000000000000000000000000000";
                                             activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                            if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                         }
                                         foreach (int i in dlsModel.TrafficAdvisory.r.Split(',').Select(n => int.Parse(n)).ToList())
                                         {
                                             activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = "00000000000000000000000000000000";
                                             activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                                            if (dlsModel.TrafficAdvisory?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.TrafficAdvisory.Color.ColorValue;
                                         }
                                         break;
                                 }
@@ -871,7 +1003,7 @@ namespace DLS.Utils
                 }
             }
 
-            if(taCalled)
+            if (taCalled)
             {
                 UpdateExtras(activeVeh);
             }
@@ -889,6 +1021,7 @@ namespace DLS.Utils
                     {
                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].FlashinessSequence = dlsModel.SpecialModes.SteadyBurn.Pattern;
                         activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Flash = true;
+                        if (dlsModel.SpecialModes.SteadyBurn?.Color?.ColorValue != null) activeVeh.Vehicle.EmergencyLightingOverride.Lights[i - 1].Color = dlsModel.SpecialModes.SteadyBurn.Color.ColorValue;
                     }
                 }
                 else
@@ -905,7 +1038,7 @@ namespace DLS.Utils
         public static void ResetExtras(ActiveVehicle activeVeh)
         {
             DLSModel dlsModel = activeVeh.Vehicle.GetDLS();
-            if(dlsModel.StageExtras != null && dlsModel.StageExtras.OffExtras != null)
+            if (dlsModel.StageExtras != null && dlsModel.StageExtras.OffExtras != null)
             {
                 foreach (var extra in dlsModel.StageExtras.OffExtras)
                 {
@@ -920,7 +1053,7 @@ namespace DLS.Utils
         public static void UpdateExtras(ActiveVehicle activeVeh)
         {
             DLSModel dlsModel = activeVeh.Vehicle.GetDLS();
-            if(dlsModel.StageExtras != null)
+            if (dlsModel.StageExtras != null)
             {
                 List<ExtraState> extras = new List<ExtraState>();
                 switch (activeVeh.LightStage)
@@ -959,7 +1092,7 @@ namespace DLS.Utils
                 {
                     foreach (var extra in extras)
                     {
-                        if(activeVeh.Vehicle.HasExtra(extra.ID))
+                        if (activeVeh.Vehicle.HasExtra(extra.ID))
                         {
                             activeVeh.Vehicle.SetExtra(extra.ID, extra.Enabled);
                         }

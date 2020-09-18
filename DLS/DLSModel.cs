@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
+using System.Drawing;
 
 namespace DLS
 {
@@ -53,6 +54,9 @@ namespace DLS
         [XmlElement("DefaultTApattern")]
         public string DefaultTApattern = "default";
 
+        [XmlElement("EnvColor")]
+        public SirenColor Color { get; set; }
+
         [XmlElement("L")]
         public string l;
 
@@ -73,6 +77,22 @@ namespace DLS
 
         [XmlElement("R")]
         public string r;
+    }
+
+    public class SirenColor
+    {
+        [XmlIgnore]
+        public Color ColorValue { get; set; }
+
+        [XmlText]
+        public string ColorString
+        {
+            get => string.Format("0x{0:X8}", ColorValue.ToArgb());
+            set
+            {
+                ColorValue = Color.FromArgb(Convert.ToInt32(value, 16));
+            }
+        }
     }
 
     public class WailSetup
@@ -219,5 +239,8 @@ namespace DLS
 
         [XmlElement("Sirens")]
         public string Sirens { get; set; }
+
+        [XmlElement("EnvColor")]
+        public SirenColor Color { get; set; }
     }
 }
