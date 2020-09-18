@@ -35,6 +35,7 @@ namespace DLS
         public static bool UIEnabled = true;
         public static bool SirenKill = false;
         public static bool PatchExtras = false;
+        public static bool LogToConsole = false;
 
         public static void Main()
         {
@@ -121,6 +122,8 @@ namespace DLS
                 if (patched) "Patched extra repair".ToLog();
                 else "Failed to patch extra repair".ToLog();
             }
+
+            LogToConsole = Settings.ReadKey("Debug", "LogToConsole").ToBoolean();
         }
 
         private static void OnUnload(bool isTerminating)

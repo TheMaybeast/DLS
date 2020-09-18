@@ -42,6 +42,8 @@ namespace DLS.Utils
         }
         internal static void ToLog(this string log)
         {
+            if (Entrypoint.LogToConsole) Game.LogTrivial(log);
+
             string path = @"Plugins/DLS.log";
             using (StreamWriter writer = new StreamWriter(path, true))
             {
