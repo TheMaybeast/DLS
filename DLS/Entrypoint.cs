@@ -146,6 +146,7 @@ namespace DLS
                         aVeh.Vehicle.EmergencyLightingOverride = aVeh.DefaultEL;
                         aVeh.Vehicle.IsSirenSilent = aVeh.IsSirenSilent;
                         NativeFunction.Natives.SET_VEHICLE_RADIO_ENABLED(aVeh.Vehicle, true);
+                        Lights.ResetExtras(aVeh);
                         ("Refreshed " + aVeh.Vehicle.Handle).ToLog();
                     }
                     else

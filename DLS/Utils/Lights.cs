@@ -22,6 +22,7 @@ namespace DLS.Utils
                     Sirens.Update(activeVeh);
                     UpdateTA(false, activeVeh);
                     UpdateSB(activeVeh);
+                    UpdateExtras(activeVeh);
                     break;
                 case LightStage.One:
                     activeVeh.Vehicle.EmergencyLightingOverride = Vehicles.GetEL(activeVeh.Vehicle);
@@ -30,6 +31,7 @@ namespace DLS.Utils
                     activeVeh.Vehicle.ShouldVehiclesYieldToThisVehicle = activeVeh.Vehicle.GetDLS().SpecialModes.LSAIYield.Stage1Yield.ToBoolean();
                     UpdateTA(false, activeVeh);
                     UpdateSB(activeVeh);
+                    UpdateExtras(activeVeh);
                     break;
                 case LightStage.Two:
                     activeVeh.Vehicle.EmergencyLightingOverride = Vehicles.GetEL(activeVeh.Vehicle);
@@ -38,6 +40,7 @@ namespace DLS.Utils
                     activeVeh.Vehicle.ShouldVehiclesYieldToThisVehicle = activeVeh.Vehicle.GetDLS().SpecialModes.LSAIYield.Stage2Yield.ToBoolean();
                     UpdateTA(false, activeVeh);
                     UpdateSB(activeVeh);
+                    UpdateExtras(activeVeh);
                     break;
                 case LightStage.Three:
                     activeVeh.Vehicle.EmergencyLightingOverride = Vehicles.GetEL(activeVeh.Vehicle);
@@ -46,6 +49,7 @@ namespace DLS.Utils
                     activeVeh.Vehicle.ShouldVehiclesYieldToThisVehicle = activeVeh.Vehicle.GetDLS().SpecialModes.LSAIYield.Stage3Yield.ToBoolean();
                     UpdateTA(false, activeVeh);
                     UpdateSB(activeVeh);
+                    UpdateExtras(activeVeh);
                     break;
                 case LightStage.CustomOne:
                     activeVeh.Vehicle.EmergencyLightingOverride = Vehicles.GetEL(activeVeh.Vehicle);
@@ -54,6 +58,7 @@ namespace DLS.Utils
                     activeVeh.Vehicle.ShouldVehiclesYieldToThisVehicle = activeVeh.Vehicle.GetDLS().SpecialModes.LSAIYield.Custom1Yield.ToBoolean();
                     UpdateTA(false, activeVeh);
                     UpdateSB(activeVeh);
+                    UpdateExtras(activeVeh);
                     break;
                 case LightStage.CustomTwo:
                     activeVeh.Vehicle.EmergencyLightingOverride = Vehicles.GetEL(activeVeh.Vehicle);
@@ -62,6 +67,7 @@ namespace DLS.Utils
                     activeVeh.Vehicle.ShouldVehiclesYieldToThisVehicle = activeVeh.Vehicle.GetDLS().SpecialModes.LSAIYield.Custom2Yield.ToBoolean();
                     UpdateTA(false, activeVeh);
                     UpdateSB(activeVeh);
+                    UpdateExtras(activeVeh);
                     break;
                 default:
                     break;
@@ -890,6 +896,72 @@ namespace DLS.Utils
                         UpdateTA(true, activeVeh);
                     }
 
+                }
+            }
+        }
+
+        public static void ResetExtras(ActiveVehicle activeVeh)
+        {
+            DLSModel dlsModel = activeVeh.Vehicle.GetDLS();
+            if(dlsModel.StageExtras != null && dlsModel.StageExtras.OffExtras != null)
+            {
+                foreach (var extra in dlsModel.StageExtras.OffExtras)
+                {
+                    if (activeVeh.Vehicle.HasExtra(extra.ID))
+                    {
+                        activeVeh.Vehicle.SetExtra(extra.ID, extra.Enabled);
+                    }
+                }
+            }
+        }
+
+        public static void UpdateExtras(ActiveVehicle activeVeh)
+        {
+            DLSModel dlsModel = activeVeh.Vehicle.GetDLS();
+            if(dlsModel.StageExtras != null)
+            {
+                List<ExtraState> extras = new List<ExtraState>();
+                switch (activeVeh.LightStage)
+                {
+                    case LightStage.One:
+                        extras = dlsModel.StageExtras.Stage1Extras.ToList();
+                        break;
+                    case LightStage.Two:
+                        extras = dlsModel.StageExtras.Stage2Extras.ToList();
+                        break;
+                    case LightStage.Three:
+                        extras = dlsModel.StageExtras.Stage3Extras.ToList();
+                        break;
+                    case LightStage.CustomOne:
+                        extras = dlsModel.StageExtras.CustomStage1Extras.ToList();
+                        break;
+                    case LightStage.CustomTwo:
+                        extras = dlsModel.StageExtras.CustomStage2Extras.ToList();
+                        break;
+                    case LightStage.Off:
+                    default:
+                        extras = dlsModel.StageExtras.OffExtras.ToList();
+                        break;
+                }
+
+                if (activeVeh.TAStage != TAStage.Off)
+                {
+                    extras.AddRange(dlsModel.StageExtras.TAExtras);
+                }
+                if (activeVeh.SBOn)
+                {
+                    extras.AddRange(dlsModel.StageExtras.SBExtras);
+                }
+
+                if (extras.Count > 0)
+                {
+                    foreach (var extra in extras)
+                    {
+                        if(activeVeh.Vehicle.HasExtra(extra.ID))
+                        {
+                            activeVeh.Vehicle.SetExtra(extra.ID, extra.Enabled);
+                        }
+                    }
                 }
             }
         }
