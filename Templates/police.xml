@@ -1,20 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- DLS v1.1.1 VEHICLE CONFIGURATION FILE -->
 <Model>
-	<StageSettings>
-		<!-- true, false -->
-		<Stage1Enabled>true</Stage1Enabled>
-		<!-- true, false -->
-		<Stage2Enabled>true</Stage2Enabled>
-		<!-- true, false -->
-		<Stage3Enabled>true</Stage3Enabled>
-		<!-- true, false -->
-		<CustomStage1Enabled>false</CustomStage1Enabled>
-		<!-- true, false -->
-		<CustomStage2Enabled>false</CustomStage2Enabled>
-		<!-- true, false -->
-		<GetStage3FromCarcols>false</GetStage3FromCarcols>
-	</StageSettings>
 	<SpecialModes>
 		<!-- Name of the Folder inside Plugins/DLS/UI -->
 		<SirenUI></SirenUI>
