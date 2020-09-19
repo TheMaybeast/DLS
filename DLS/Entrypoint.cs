@@ -41,9 +41,12 @@ namespace DLS
         {
             //Initiates Log File
             Log Log = new Log();
-
+            
             //Checks if .ini file is created.
             Settings.IniCheck();
+
+            //Direct logging output to RPH console if configured
+            LogToConsole = Settings.ReadKey("Debug", "LogToConsole").ToBoolean();
 
             //Version check and logging.
             FileVersionInfo rphVer = FileVersionInfo.GetVersionInfo("ragepluginhook.exe");
@@ -122,8 +125,6 @@ namespace DLS
                 if (patched) "Patched extra repair".ToLog();
                 else "Failed to patch extra repair".ToLog();
             }
-
-            LogToConsole = Settings.ReadKey("Debug", "LogToConsole").ToBoolean();
         }
 
         private static void OnUnload(bool isTerminating)
