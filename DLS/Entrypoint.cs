@@ -122,8 +122,8 @@ namespace DLS
             if (PatchExtras)
             {
                 bool patched = ExtraRepairPatch.DisableExtraRepair();
-                if (patched) "Patched extra repair".ToLog();
-                else "Failed to patch extra repair".ToLog();
+                if (patched) "SUCCESS: Patched extra repair".ToLog();
+                else "ERROR: Failed to patch extra repair".ToLog();
             }
         }
 

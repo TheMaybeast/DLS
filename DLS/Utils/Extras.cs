@@ -56,7 +56,7 @@ namespace DLS.Utils
                 advancedHookService = CreateAdvHookService();
             } catch (DllNotFoundException)
             {
-                "AdvancedHookV.dll is missing or could not be loaded, unable to patch extra repair".ToLog();
+                "ERROR: AdvancedHookV.dll is missing or could not be loaded, unable to patch extra repair".ToLog();
                 hasPatched = false;
                 return hasPatched.Value;
             }
