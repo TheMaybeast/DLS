@@ -117,10 +117,10 @@ namespace DLS.Threads
 
         internal static void Process()
         {
-            sizeX = Settings.ReadKey("UI", "Width", "550").ToInt32();
-            sizeY = Settings.ReadKey("UI", "Height", "220").ToInt32();
-            offsetX = Settings.ReadKey("UI", "OffsetX", "1920").ToInt32();
-            offsetY = Settings.ReadKey("UI", "OffsetY", "1080").ToInt32();
+            sizeX = Settings.UI_WIDTH;
+            sizeY = Settings.UI_HEIGHT;
+            offsetX = Settings.UI_OFFSETX;
+            offsetY = Settings.UI_OFFSETY;
 
             Background = new Sprite(Properties.Resources.background, new Point(offsetX - sizeX, offsetY - sizeY), new Size(sizeX, sizeY));
             Horn_On = new Sprite(Properties.Resources.horn_on, new Point(offsetX - sizeX, offsetY - sizeY), new Size(sizeX, sizeY));
