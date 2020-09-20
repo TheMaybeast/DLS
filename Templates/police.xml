@@ -1,20 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- DLS v1.1.1 VEHICLE CONFIGURATION FILE -->
 <Model>
-	<StageSettings>
-		<!-- true, false -->
-		<Stage1Enabled>true</Stage1Enabled>
-		<!-- true, false -->
-		<Stage2Enabled>true</Stage2Enabled>
-		<!-- true, false -->
-		<Stage3Enabled>true</Stage3Enabled>
-		<!-- true, false -->
-		<CustomStage1Enabled>false</CustomStage1Enabled>
-		<!-- true, false -->
-		<CustomStage2Enabled>false</CustomStage2Enabled>
-		<!-- true, false -->
-		<GetStage3FromCarcols>false</GetStage3FromCarcols>
-	</StageSettings>
 	<SpecialModes>
 		<!-- Name of the Folder inside Plugins/DLS/UI -->
 		<SirenUI></SirenUI>
@@ -31,10 +17,12 @@
 		<SteadyBurn>
 			<!-- true, false -->
 			<SteadyBurnEnabled>true</SteadyBurnEnabled>
-			<!--(OPTIONAL) 32 digits (binary) pattern -->
+			<!-- (OPTIONAL) 32 digits (binary) pattern -->
 			<Pattern>11111111111111111111111111111111</Pattern>
 			<!-- (OPTIONAL) -->
 			<Sirens>1,6</Sirens>
+			<!-- (OPTIONAL) override env lighting color in 0xAARRGGBB format -->
+			<!-- <EnvColor>0xFF0000FF</EnvColor> -->
 		</SteadyBurn>
 	</SpecialModes>
 	<SoundSettings>
@@ -131,11 +119,49 @@
 		<DefaultEnabledDirection>left</DefaultEnabledDirection>
 		<!-- (OPTIONAL)1, 2, 3, 4 (custom1), 5(custom2)-->
 		<AutoDisableStages></AutoDisableStages>
+		<!-- (OPTIONAL) override env lighting color in 0xAARRGGBB format -->
+		<!-- <EnvColor>0xFF0000FF</EnvColor> -->
 		<L>11</L>
 		<CL>12</CL>
 		<CR>13</CR>
 		<R>14</R>
 	</TrafficAdvisory>	
+	<!-- 
+		Extras can be toggled on or off at each stage. They will not get reverted to their original state,
+		unless you reset them to a preconfigured setting in the <Off> tag. If TA or SB are enabled while 
+		in a stage, the extra settings for the stage are  applied first, then the TA, then the Steady Burn.
+	-->
+	<Extras>
+		<!-- EXAMPLE: -->
+		<!--
+		<Stage1>
+			<Extra ID="7" Enabled="true" />
+			<Extra ID="8" Enabled="true" />
+			<Extra ID="9" Enabled="true" />
+		</Stage1>
+		<Stage2>
+			<Extra ID="7" Enabled="false" />
+			<Extra ID="8" Enabled="true" />
+			<Extra ID="9" Enabled="false" />
+		</Stage2>
+		<Stage3>
+			<Extra ID="7" Enabled="false" />
+			<Extra ID="8" Enabled="false" />
+			<Extra ID="9" Enabled="false" />
+		</Stage3>
+		<Off>
+			<Extra ID="7" Enabled="false" />
+			<Extra ID="8" Enabled="false" />
+			<Extra ID="9" Enabled="false" />
+		</Off>
+		<TAEnabled>
+			<Extra ID="9" Enabled="true" />
+		</TAEnabled>
+		<SBEnabled></SBEnabled>
+		<CustomStage1></CustomStage1>
+		<CustomStage2></CustomStage2>
+		-->
+	</Extras>
 	<!-- EACH STAGE IS A SIRENS ITEM FROM CARCOLS.META (YOU ARE ABLE TO REMOVE THE NAME AND ID FROM IT)-->
 	<Sirens>
 		<Stage1>

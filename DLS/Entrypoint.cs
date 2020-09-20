@@ -34,14 +34,19 @@ namespace DLS
         public static bool BLightsEnabled = true;
         public static bool UIEnabled = true;
         public static bool SirenKill = false;
+        public static bool PatchExtras = false;
+        public static bool LogToConsole = false;
 
         public static void Main()
         {
             //Initiates Log File
             Log Log = new Log();
-
+            
             //Checks if .ini file is created.
             Settings.IniCheck();
+
+            //Direct logging output to RPH console if configured
+            LogToConsole = Settings.ReadKey("Debug", "LogToConsole").ToBoolean();
 
             //Version check and logging.
             FileVersionInfo rphVer = FileVersionInfo.GetVersionInfo("ragepluginhook.exe");
@@ -110,6 +115,16 @@ namespace DLS
 
             //If Siren Kill is enabled
             SirenKill = Settings.ReadKey("Settings", "SirenKill").ToBoolean();
+
+            //If extra patch is enabled
+            PatchExtras = Settings.ReadKey("Settings", "PatchExtras").ToBoolean();
+
+            if (PatchExtras)
+            {
+                bool patched = ExtraRepairPatch.DisableExtraRepair();
+                if (patched) "SUCCESS: Patched extra repair".ToLog();
+                else "ERROR: Failed to patch extra repair".ToLog();
+            }
         }
 
         private static void OnUnload(bool isTerminating)
@@ -135,6 +150,7 @@ namespace DLS
                         aVeh.Vehicle.EmergencyLightingOverride = aVeh.DefaultEL;
                         aVeh.Vehicle.IsSirenSilent = aVeh.IsSirenSilent;
                         NativeFunction.Natives.SET_VEHICLE_RADIO_ENABLED(aVeh.Vehicle, true);
+                        Lights.ResetExtras(aVeh);
                         ("Refreshed " + aVeh.Vehicle.Handle).ToLog();
                     }
                     else

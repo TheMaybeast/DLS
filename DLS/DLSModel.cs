@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
+using System.Drawing;
 
 namespace DLS
 {
@@ -18,6 +19,9 @@ namespace DLS
 
         [XmlElement("TrafficAdvisory")]
         public TrafficAdvisory TrafficAdvisory { get; set; } = new TrafficAdvisory();
+
+        [XmlElement("Extras")]
+        public StageExtras StageExtras { get; set; } = new StageExtras();
 
         [XmlElement("Sirens")]
         public Sirens Sirens { get; set; } = new Sirens();
@@ -50,6 +54,9 @@ namespace DLS
         [XmlElement("DefaultTApattern")]
         public string DefaultTApattern = "default";
 
+        [XmlElement("EnvColor")]
+        public SirenColor Color { get; set; }
+
         [XmlElement("L")]
         public string l;
 
@@ -70,6 +77,22 @@ namespace DLS
 
         [XmlElement("R")]
         public string r;
+    }
+
+    public class SirenColor
+    {
+        [XmlIgnore]
+        public Color ColorValue { get; set; }
+
+        [XmlText]
+        public string ColorString
+        {
+            get => string.Format("0x{0:X8}", ColorValue.ToArgb());
+            set
+            {
+                ColorValue = Color.FromArgb(Convert.ToInt32(value, 16));
+            }
+        }
     }
 
     public class WailSetup
@@ -100,6 +123,50 @@ namespace DLS
 
         [XmlElement("CustomStage2")]
         public SirenSetting CustomStage2 { get; set; }
+    }
+
+    public class StageExtras
+    {
+        [XmlArray("Off")]
+        [XmlArrayItem("Extra")]
+        public ExtraState[] OffExtras { get; set; } = new ExtraState[0];
+
+        [XmlArray("TAEnabled")]
+        [XmlArrayItem("Extra")]
+        public ExtraState[] TAExtras { get; set; } = new ExtraState[0];
+
+        [XmlArray("SBEnabled")]
+        [XmlArrayItem("Extra")]
+        public ExtraState[] SBExtras { get; set; } = new ExtraState[0];
+
+        [XmlArray("Stage1")]
+        [XmlArrayItem("Extra")]
+        public ExtraState[] Stage1Extras { get; set; } = new ExtraState[0];
+
+        [XmlArray("Stage2")]
+        [XmlArrayItem("Extra")]
+        public ExtraState[] Stage2Extras { get; set; } = new ExtraState[0];
+
+        [XmlArray("Stage3")]
+        [XmlArrayItem("Extra")]
+        public ExtraState[] Stage3Extras { get; set; } = new ExtraState[0];
+
+        [XmlArray("CustomStage1")]
+        [XmlArrayItem("Extra")]
+        public ExtraState[] CustomStage1Extras { get; set; } = new ExtraState[0];
+
+        [XmlArray("CustomStage2")]
+        [XmlArrayItem("Extra")]
+        public ExtraState[] CustomStage2Extras { get; set; } = new ExtraState[0];
+    }
+
+    public class ExtraState
+    {
+        [XmlAttribute("ID")]
+        public int ID { get; set; }
+
+        [XmlAttribute("Enabled")]
+        public bool Enabled { get; set; }
     }
 
     public class SoundSettings
@@ -172,5 +239,8 @@ namespace DLS
 
         [XmlElement("Sirens")]
         public string Sirens { get; set; }
+
+        [XmlElement("EnvColor")]
+        public SirenColor Color { get; set; }
     }
 }
