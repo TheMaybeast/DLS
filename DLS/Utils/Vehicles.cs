@@ -59,8 +59,8 @@ namespace DLS.Utils
                     }
                     else
                     {
-                        dictModels.Add(new Model(Path.GetFileNameWithoutExtension(file)), dlsModel);                        
-                        ("Added: " + Path.GetFileNameWithoutExtension(file)).ToLog();
+                        dictModels.Add(new Model(Path.GetFileNameWithoutExtension(file)), dlsModel);         
+                        ("Added: " + Path.GetFileNameWithoutExtension(file) + " from " + Path.GetFileName(file)).ToLog();
                     }
                 }
                 catch (Exception e)
