@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 
@@ -172,6 +173,16 @@ namespace DLS.Utils
                     index = 1;
             }
             return list[index];
+        }
+
+        public static List<List<T>> Chunk<T>(IEnumerable<T> data, int numArrays)
+        {
+            var size = data.Count() / numArrays;
+            return data
+                  .Select((x, i) => new { Index = i, Value = x })
+                  .GroupBy(x => x.Index / size)
+                  .Select(x => x.Select(v => v.Value).ToList())
+                  .ToList();
         }
     }
 }

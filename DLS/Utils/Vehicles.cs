@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Xml.Serialization;
 
 namespace DLS.Utils
@@ -40,6 +41,45 @@ namespace DLS.Utils
                         dlsModel.AvailableSirenStages.Add(SirenStage.Warning);
                     if (dlsModel.SoundSettings.Tone4 != "")
                         dlsModel.AvailableSirenStages.Add(SirenStage.Warning2);
+
+                    if(dlsModel.TrafficAdvisory.Type != "off" && dlsModel.TrafficAdvisory.Sirens != "")
+                    {
+                        string[] taSirens = dlsModel.TrafficAdvisory.Sirens.Trim().Split(',');
+                        List<List<string>> splitSirens;                        
+                        switch (dlsModel.TrafficAdvisory.Type)
+                        {
+                            case "three":
+                                splitSirens = Extensions.Chunk(taSirens, 3);
+                                dlsModel.TrafficAdvisory.l = String.Join(",", splitSirens[0]);
+                                dlsModel.TrafficAdvisory.c = String.Join(",", splitSirens[1]);
+                                dlsModel.TrafficAdvisory.r = String.Join(",", splitSirens[2]);
+                                break;
+                            case "four":
+                                splitSirens = Extensions.Chunk(taSirens, 4);
+                                dlsModel.TrafficAdvisory.l = String.Join(",", splitSirens[0]);
+                                dlsModel.TrafficAdvisory.cl = String.Join(",", splitSirens[1]);
+                                dlsModel.TrafficAdvisory.cr = String.Join(",", splitSirens[2]);
+                                dlsModel.TrafficAdvisory.r = String.Join(",", splitSirens[3]);
+                                break;
+                            case "five":
+                                splitSirens = Extensions.Chunk(taSirens, 5);
+                                dlsModel.TrafficAdvisory.l = String.Join(",", splitSirens[0]);                                
+                                dlsModel.TrafficAdvisory.cl = String.Join(",", splitSirens[1]);
+                                dlsModel.TrafficAdvisory.c = String.Join(",", splitSirens[2]);
+                                dlsModel.TrafficAdvisory.cr = String.Join(",", splitSirens[3]);                                
+                                dlsModel.TrafficAdvisory.r = String.Join(",", splitSirens[4]);
+                                break;
+                            case "six":
+                                splitSirens = Extensions.Chunk(taSirens, 6);
+                                dlsModel.TrafficAdvisory.l = String.Join(",", splitSirens[0]);
+                                dlsModel.TrafficAdvisory.el = String.Join(",", splitSirens[1]);
+                                dlsModel.TrafficAdvisory.cl = String.Join(",", splitSirens[2]);
+                                dlsModel.TrafficAdvisory.cr = String.Join(",", splitSirens[3]);
+                                dlsModel.TrafficAdvisory.er = String.Join(",", splitSirens[4]);
+                                dlsModel.TrafficAdvisory.r = String.Join(",", splitSirens[5]);
+                                break;
+                        }
+                    }                    
 
                     string affectedModels = dlsModel.Models.Trim();
                     if (affectedModels.Length > 0) {
