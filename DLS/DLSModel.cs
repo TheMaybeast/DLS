@@ -57,6 +57,10 @@ namespace DLS
         [XmlElement("EnvColor")]
         public SirenColor Color { get; set; }
 
+        [XmlElement("Sirens")]
+        public string Sirens { get; set; } = "";
+
+        // Will be deprecated in DLS v2.0, utilize Sirens instead.
         [XmlElement("L")]
         public string l;
 
@@ -200,6 +204,9 @@ namespace DLS
 
         [XmlElement("PresetSirenOnLeaveVehicle")]
         public string PresetSirenOnLeaveVehicle { get; set; }
+
+        [XmlElement("StageOrder")]
+        public string StageOrder { get; set; } = "";
 
         [XmlElement("WailSetup")]
         public WailSetup WailSetup { get; set; } = new WailSetup();

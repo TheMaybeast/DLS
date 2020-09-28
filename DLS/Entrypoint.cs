@@ -113,7 +113,6 @@ namespace DLS
 
             //If extra patch is enabled
             PatchExtras = Settings.SET_PATCHEXTRAS;
-
             if (PatchExtras)
             {
                 bool patched = ExtraRepairPatch.DisableExtraRepair();

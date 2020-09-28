@@ -24,6 +24,8 @@
 			<!-- (OPTIONAL) override env lighting color in 0xAARRGGBB format -->
 			<!-- <EnvColor>0xFF0000FF</EnvColor> -->
 		</SteadyBurn>
+		<!-- Order of the Light Stages (DEFAULT = 1,2,3), does not include 0 (Off) -->
+		<StageOrder></StageOrder>
 	</SpecialModes>
 	<SoundSettings>
 		<Tone1>VEHICLES_HORNS_SIREN_1</Tone1>
@@ -32,7 +34,7 @@
 		<Tone4>VEHICLES_HORNS_AMBULANCE_WARNING</Tone4>
 		<Horn>SIRENS_AIRHORN</Horn>
 		<!-- true, false -->
-		<AirHornInterruptsSiren>false</AirHornInterruptsSiren>
+		<AirHornInterruptsSiren>true</AirHornInterruptsSiren>
 	</SoundSettings>	
 	<!-- Left Side of Vehicle [L EL CL CR ER R] Right Side of Vehicle -->
 	<!-- Left Side of Vehicle [L CL C CR R] Right Side of Vehicle -->
@@ -116,15 +118,13 @@
 		<!--(OPTIONAL) 1, 2, 3, 4 (custom1), 5(custom2)-->
 		<AutoEnableStages></AutoEnableStages>
 		<!--(OPTIONAL) left, diverge, right -->
-		<DefaultEnabledDirection>left</DefaultEnabledDirection>
+		<DefaultEnabledDirection></DefaultEnabledDirection>
 		<!-- (OPTIONAL)1, 2, 3, 4 (custom1), 5(custom2)-->
 		<AutoDisableStages></AutoDisableStages>
 		<!-- (OPTIONAL) override env lighting color in 0xAARRGGBB format -->
 		<!-- <EnvColor>0xFF0000FF</EnvColor> -->
-		<L>11</L>
-		<CL>12</CL>
-		<CR>13</CR>
-		<R>14</R>
+		<!-- All the sirens used for the TA, from Left to Right (EG: 1,2,3,4,5) -->
+		<Sirens>11,12,13,14</Sirens>
 	</TrafficAdvisory>	
 	<!-- 
 		Extras can be toggled on or off at each stage. They will not get reverted to their original state,

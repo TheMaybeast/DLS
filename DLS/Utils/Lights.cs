@@ -15,6 +15,11 @@ namespace DLS.Utils
                 case LightStage.Off:
                     activeVeh.Vehicle.IsSirenOn = false;
                     activeVeh.SirenStage = SirenStage.Off;
+                    if (activeVeh.AuxOn)
+                    {
+                        Sound.ClearTempSoundID(activeVeh.AuxID);
+                        activeVeh.AuxOn = false;
+                    }                    
                     activeVeh.TAStage = TAStage.Off;
                     activeVeh.SBOn = false;
                     activeVeh.IsScanOn = false;
@@ -1103,8 +1108,15 @@ namespace DLS.Utils
 
         public static void MoveUpStage(ActiveVehicle activeVeh)
         {
-            NativeFunction.Natives.PLAY_SOUND_FRONTEND(-1, "NAV_UP_DOWN", "HUD_FRONTEND_DEFAULT_SOUNDSET", true);
-            activeVeh.LightStage = activeVeh.Vehicle.GetDLS().AvailableLightStages.NextLightStage(activeVeh.LightStage);
+            NativeFunction.Natives.PLAY_SOUND_FRONTEND(-1, Settings.SET_AUDIONAME, Settings.SET_AUDIOREF, true);
+            activeVeh.LightStage = activeVeh.Vehicle.GetDLS().AvailableLightStages.Next(activeVeh.LightStage);
+            Update(activeVeh);
+        }
+
+        public static void MoveDownStage(ActiveVehicle activeVeh)
+        {
+            NativeFunction.Natives.PLAY_SOUND_FRONTEND(-1, Settings.SET_AUDIONAME, Settings.SET_AUDIOREF, true);
+            activeVeh.LightStage = activeVeh.Vehicle.GetDLS().AvailableLightStages.Previous(activeVeh.LightStage);
             Update(activeVeh);
         }
 

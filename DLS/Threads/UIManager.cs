@@ -403,81 +403,81 @@ namespace DLS.Threads
                         switch (aVeh.TAType)
                         {
                             case "three":
-                                if (aVeh.TAStage != TAStage.Off && UIHelper.IsSirenOn[dlsModel.TrafficAdvisory.l.ToInt32() - 1] == SirenStatus.On)
+                                if (aVeh.TAStage != TAStage.Off && UIHelper.IsSirenOn[dlsModel.TrafficAdvisory.l.Split(',')[0].ToInt32() - 1] == SirenStatus.On)
                                     _3_l_On.Draw(e.Graphics);
                                 else
                                     _3_l_Off.Draw(e.Graphics);
-                                if (aVeh.TAStage != TAStage.Off && UIHelper.IsSirenOn[dlsModel.TrafficAdvisory.c.ToInt32() - 1] == SirenStatus.On)
+                                if (aVeh.TAStage != TAStage.Off && UIHelper.IsSirenOn[dlsModel.TrafficAdvisory.c.Split(',')[0].ToInt32() - 1] == SirenStatus.On)
                                     _3_c_On.Draw(e.Graphics);
                                 else
                                     _3_c_Off.Draw(e.Graphics);
-                                if (aVeh.TAStage != TAStage.Off && UIHelper.IsSirenOn[dlsModel.TrafficAdvisory.r.ToInt32() - 1] == SirenStatus.On)
+                                if (aVeh.TAStage != TAStage.Off && UIHelper.IsSirenOn[dlsModel.TrafficAdvisory.r.Split(',')[0].ToInt32() - 1] == SirenStatus.On)
                                     _3_r_On.Draw(e.Graphics);
                                 else
                                     _3_r_Off.Draw(e.Graphics);
                                 break;
                             case "four":
-                                if (aVeh.TAStage != TAStage.Off && UIHelper.IsSirenOn[dlsModel.TrafficAdvisory.l.ToInt32() - 1] == SirenStatus.On)
+                                if (aVeh.TAStage != TAStage.Off && UIHelper.IsSirenOn[dlsModel.TrafficAdvisory.l.Split(',')[0].ToInt32() - 1] == SirenStatus.On)
                                     _4_l_On.Draw(e.Graphics);
                                 else
                                     _4_l_Off.Draw(e.Graphics);
-                                if (aVeh.TAStage != TAStage.Off && UIHelper.IsSirenOn[dlsModel.TrafficAdvisory.cl.ToInt32() - 1] == SirenStatus.On)
+                                if (aVeh.TAStage != TAStage.Off && UIHelper.IsSirenOn[dlsModel.TrafficAdvisory.cl.Split(',')[0].ToInt32() - 1] == SirenStatus.On)
                                     _4_cl_On.Draw(e.Graphics);
                                 else
                                     _4_cl_Off.Draw(e.Graphics);
-                                if (aVeh.TAStage != TAStage.Off && UIHelper.IsSirenOn[dlsModel.TrafficAdvisory.cr.ToInt32() - 1] == SirenStatus.On)
+                                if (aVeh.TAStage != TAStage.Off && UIHelper.IsSirenOn[dlsModel.TrafficAdvisory.cr.Split(',')[0].ToInt32() - 1] == SirenStatus.On)
                                     _4_cr_On.Draw(e.Graphics);
                                 else
                                     _4_cr_Off.Draw(e.Graphics);
-                                if (aVeh.TAStage != TAStage.Off && UIHelper.IsSirenOn[dlsModel.TrafficAdvisory.r.ToInt32() - 1] == SirenStatus.On)
+                                if (aVeh.TAStage != TAStage.Off && UIHelper.IsSirenOn[dlsModel.TrafficAdvisory.r.Split(',')[0].ToInt32() - 1] == SirenStatus.On)
                                     _4_r_On.Draw(e.Graphics);
                                 else
                                     _4_r_Off.Draw(e.Graphics);
                                 break;
                             case "five":
-                                if (aVeh.TAStage != TAStage.Off && UIHelper.IsSirenOn[dlsModel.TrafficAdvisory.l.ToInt32() - 1] == SirenStatus.On)
+                                if (aVeh.TAStage != TAStage.Off && UIHelper.IsSirenOn[dlsModel.TrafficAdvisory.l.Split(',')[0].ToInt32() - 1] == SirenStatus.On)
                                     _5_l_On.Draw(e.Graphics);
                                 else
                                     _5_l_Off.Draw(e.Graphics);
-                                if (aVeh.TAStage != TAStage.Off && UIHelper.IsSirenOn[dlsModel.TrafficAdvisory.cl.ToInt32() - 1] == SirenStatus.On)
+                                if (aVeh.TAStage != TAStage.Off && UIHelper.IsSirenOn[dlsModel.TrafficAdvisory.cl.Split(',')[0].ToInt32() - 1] == SirenStatus.On)
                                     _5_cl_On.Draw(e.Graphics);
                                 else
                                     _5_cl_Off.Draw(e.Graphics);
-                                if (aVeh.TAStage != TAStage.Off && UIHelper.IsSirenOn[dlsModel.TrafficAdvisory.c.ToInt32() - 1] == SirenStatus.On)
+                                if (aVeh.TAStage != TAStage.Off && UIHelper.IsSirenOn[dlsModel.TrafficAdvisory.c.Split(',')[0].ToInt32() - 1] == SirenStatus.On)
                                     _5_c_On.Draw(e.Graphics);
                                 else
                                     _5_c_Off.Draw(e.Graphics);
-                                if (aVeh.TAStage != TAStage.Off && UIHelper.IsSirenOn[dlsModel.TrafficAdvisory.cr.ToInt32() - 1] == SirenStatus.On)
+                                if (aVeh.TAStage != TAStage.Off && UIHelper.IsSirenOn[dlsModel.TrafficAdvisory.cr.Split(',')[0].ToInt32() - 1] == SirenStatus.On)
                                     _5_cr_On.Draw(e.Graphics);
                                 else
                                     _5_cr_Off.Draw(e.Graphics);
-                                if (aVeh.TAStage != TAStage.Off && UIHelper.IsSirenOn[dlsModel.TrafficAdvisory.r.ToInt32() - 1] == SirenStatus.On)
+                                if (aVeh.TAStage != TAStage.Off && UIHelper.IsSirenOn[dlsModel.TrafficAdvisory.r.Split(',')[0].ToInt32() - 1] == SirenStatus.On)
                                     _5_r_On.Draw(e.Graphics);
                                 else
                                     _5_r_Off.Draw(e.Graphics);
                                 break;
                             case "six":
-                                if (aVeh.TAStage != TAStage.Off && UIHelper.IsSirenOn[dlsModel.TrafficAdvisory.l.ToInt32() - 1] == SirenStatus.On)
+                                if (aVeh.TAStage != TAStage.Off && UIHelper.IsSirenOn[dlsModel.TrafficAdvisory.l.Split(',')[0].ToInt32() - 1] == SirenStatus.On)
                                     _6_l_On.Draw(e.Graphics);
                                 else
                                     _6_l_Off.Draw(e.Graphics);
-                                if (aVeh.TAStage != TAStage.Off && UIHelper.IsSirenOn[dlsModel.TrafficAdvisory.el.ToInt32() - 1] == SirenStatus.On)
+                                if (aVeh.TAStage != TAStage.Off && UIHelper.IsSirenOn[dlsModel.TrafficAdvisory.el.Split(',')[0].ToInt32() - 1] == SirenStatus.On)
                                     _6_el_On.Draw(e.Graphics);
                                 else
                                     _6_el_Off.Draw(e.Graphics);
-                                if (aVeh.TAStage != TAStage.Off && UIHelper.IsSirenOn[dlsModel.TrafficAdvisory.cl.ToInt32() - 1] == SirenStatus.On)
+                                if (aVeh.TAStage != TAStage.Off && UIHelper.IsSirenOn[dlsModel.TrafficAdvisory.cl.Split(',')[0].ToInt32() - 1] == SirenStatus.On)
                                     _6_cl_On.Draw(e.Graphics);
                                 else
                                     _6_cl_Off.Draw(e.Graphics);
-                                if (aVeh.TAStage != TAStage.Off && UIHelper.IsSirenOn[dlsModel.TrafficAdvisory.cr.ToInt32() - 1] == SirenStatus.On)
+                                if (aVeh.TAStage != TAStage.Off && UIHelper.IsSirenOn[dlsModel.TrafficAdvisory.cr.Split(',')[0].ToInt32() - 1] == SirenStatus.On)
                                     _6_cr_On.Draw(e.Graphics);
                                 else
                                     _6_cr_Off.Draw(e.Graphics);
-                                if (aVeh.TAStage != TAStage.Off && UIHelper.IsSirenOn[dlsModel.TrafficAdvisory.er.ToInt32() - 1] == SirenStatus.On)
+                                if (aVeh.TAStage != TAStage.Off && UIHelper.IsSirenOn[dlsModel.TrafficAdvisory.er.Split(',')[0].ToInt32() - 1] == SirenStatus.On)
                                     _6_er_On.Draw(e.Graphics);
                                 else
                                     _6_er_Off.Draw(e.Graphics);
-                                if (aVeh.TAStage != TAStage.Off && UIHelper.IsSirenOn[dlsModel.TrafficAdvisory.r.ToInt32() - 1] == SirenStatus.On)
+                                if (aVeh.TAStage != TAStage.Off && UIHelper.IsSirenOn[dlsModel.TrafficAdvisory.r.Split(',')[0].ToInt32() - 1] == SirenStatus.On)
                                     _6_r_On.Draw(e.Graphics);
                                 else
                                     _6_r_Off.Draw(e.Graphics);

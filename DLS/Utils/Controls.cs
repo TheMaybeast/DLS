@@ -114,6 +114,21 @@ namespace DLS.Utils
                         default:
                             return false;
                     }
+                case DLSControls.LIGHT_TOGGLE:
+                    switch (Settings.GEN_MODIFIER)
+                    {
+                        case Keys.Shift:
+                            return Game.IsShiftKeyDownRightNow
+                                && Game.IsKeyDown(Settings.LIGHT_TOGGLE);
+                        case Keys.Control:
+                            return Game.IsControlKeyDownRightNow
+                                && Game.IsKeyDown(Settings.LIGHT_TOGGLE);
+                        case Keys.Alt:
+                            return Game.IsAltKeyDownRightNow
+                                && Game.IsKeyDown(Settings.LIGHT_TOGGLE);
+                        default:
+                            return false;
+                    }
                 default:
                     return false;
             }
