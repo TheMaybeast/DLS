@@ -24,13 +24,26 @@ namespace DLS.Utils
                     DLSModel dlsModel = (DLSModel)mySerializer.Deserialize(streamReader);
                     streamReader.Close();
 
-                    dlsModel.AvailableLightStages.Add(LightStage.Off);
-                    if (dlsModel.Sirens.Stage1Setting != null)
-                        dlsModel.AvailableLightStages.Add(LightStage.One);
-                    if (dlsModel.Sirens.Stage2Setting != null)
-                        dlsModel.AvailableLightStages.Add(LightStage.Two);
-                    if (dlsModel.Sirens.Stage3Setting != null)
-                        dlsModel.AvailableLightStages.Add(LightStage.Three);
+                    if(dlsModel.SpecialModes.StageOrder != "")
+                    {
+                        dlsModel.AvailableLightStages.Add(LightStage.Off);
+                        string[] stages = dlsModel.SpecialModes.StageOrder.Split(',');
+                        for(int i = 0; i < stages.Count(); i++)
+                        {
+                            stages[i].Trim();
+                            dlsModel.AvailableLightStages.Add((LightStage)stages[i].ToInt32());
+                        }
+                    }
+                    else
+                    {
+                        dlsModel.AvailableLightStages.Add(LightStage.Off);
+                        if (dlsModel.Sirens.Stage1Setting != null)
+                            dlsModel.AvailableLightStages.Add(LightStage.One);
+                        if (dlsModel.Sirens.Stage2Setting != null)
+                            dlsModel.AvailableLightStages.Add(LightStage.Two);
+                        if (dlsModel.Sirens.Stage3Setting != null)
+                            dlsModel.AvailableLightStages.Add(LightStage.Three);
+                    }                    
 
                     dlsModel.AvailableSirenStages.Add(SirenStage.Off);
                     if (dlsModel.SoundSettings.Tone1 != "")

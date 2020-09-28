@@ -205,6 +205,9 @@ namespace DLS
         [XmlElement("PresetSirenOnLeaveVehicle")]
         public string PresetSirenOnLeaveVehicle { get; set; }
 
+        [XmlElement("StageOrder")]
+        public string StageOrder { get; set; } = "";
+
         [XmlElement("WailSetup")]
         public WailSetup WailSetup { get; set; } = new WailSetup();
 

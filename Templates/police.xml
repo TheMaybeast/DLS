@@ -24,6 +24,8 @@
 			<!-- (OPTIONAL) override env lighting color in 0xAARRGGBB format -->
 			<!-- <EnvColor>0xFF0000FF</EnvColor> -->
 		</SteadyBurn>
+		<!-- Order of the Light Stages (DEFAULT = 1,2,3), does not include 0 (Off) -->
+		<StageOrder></StageOrder>
 	</SpecialModes>
 	<SoundSettings>
 		<Tone1>VEHICLES_HORNS_SIREN_1</Tone1>
@@ -121,10 +123,8 @@
 		<AutoDisableStages></AutoDisableStages>
 		<!-- (OPTIONAL) override env lighting color in 0xAARRGGBB format -->
 		<!-- <EnvColor>0xFF0000FF</EnvColor> -->
-		<L>11</L>
-		<CL>12</CL>
-		<CR>13</CR>
-		<R>14</R>
+		<!-- All the sirens used for the TA, from Left to Right (EG: 1,2,3,4,5) -->
+		<Sirens></Sirens>
 	</TrafficAdvisory>	
 	<!-- 
 		Extras can be toggled on or off at each stage. They will not get reverted to their original state,
