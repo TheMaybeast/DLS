@@ -52,7 +52,7 @@ namespace DLS.Threads
                     if (Controls.IsDLSControlDown(DLSControls.GEN_LOCKALL))
                     {
                         Entrypoint.keysLocked = !Entrypoint.keysLocked;
-                        NativeFunction.Natives.PLAY_SOUND_FRONTEND(-1, "TOGGLE_ON", "HUD_FRONTEND_DEFAULT_SOUNDSET", true);
+                        NativeFunction.Natives.PLAY_SOUND_FRONTEND(-1, Settings.SET_AUDIONAME, Settings.SET_AUDIOREF, true);
                     }
                     if (!blktOn && Entrypoint.BLightsEnabled && NativeFunction.Natives.IS_VEHICLE_STOPPED<bool>(veh))
                         NativeFunction.Natives.SET_VEHICLE_BRAKE_LIGHTS(veh, true);
@@ -96,7 +96,7 @@ namespace DLS.Threads
                                     activeVeh.TApatternCurrentIndex++;
                                 else
                                     activeVeh.TApatternCurrentIndex = 0;
-                                NativeFunction.Natives.PLAY_SOUND_FRONTEND(-1, "NAV_UP_DOWN", "HUD_FRONTEND_DEFAULT_SOUNDSET", true);
+                                NativeFunction.Natives.PLAY_SOUND_FRONTEND(-1, Settings.SET_AUDIONAME, Settings.SET_AUDIOREF, true);
                                 Lights.UpdateTA(true, activeVeh);
                                 continue;
                             }
@@ -153,7 +153,7 @@ namespace DLS.Threads
                                 #region Lights Manager
                                 if (Controls.IsDLSControlDownWithModifier(DLSControls.LIGHT_SBURN))
                                 {
-                                    NativeFunction.Natives.PLAY_SOUND_FRONTEND(-1, "NAV_UP_DOWN", "HUD_FRONTEND_DEFAULT_SOUNDSET", true);
+                                    NativeFunction.Natives.PLAY_SOUND_FRONTEND(-1, Settings.SET_AUDIONAME, Settings.SET_AUDIOREF, true);
                                     blktOn = !blktOn;
                                     if (blktOn)
                                     {
@@ -183,7 +183,7 @@ namespace DLS.Threads
                                         activeVeh.LightStage = LightStage.One;
                                     else
                                         activeVeh.LightStage = LightStage.Off;
-                                    NativeFunction.Natives.PLAY_SOUND_FRONTEND(-1, "NAV_UP_DOWN", "HUD_FRONTEND_DEFAULT_SOUNDSET", true);
+                                    NativeFunction.Natives.PLAY_SOUND_FRONTEND(-1, Settings.SET_AUDIONAME, Settings.SET_AUDIOREF, true);
                                     Lights.Update(activeVeh);
                                 }
                                 else if (vehDLS.DoesVehicleHaveLightStage(LightStage.Two)
@@ -193,7 +193,7 @@ namespace DLS.Threads
                                         activeVeh.LightStage = LightStage.Two;
                                     else
                                         activeVeh.LightStage = LightStage.Off;
-                                    NativeFunction.Natives.PLAY_SOUND_FRONTEND(-1, "NAV_UP_DOWN", "HUD_FRONTEND_DEFAULT_SOUNDSET", true);
+                                    NativeFunction.Natives.PLAY_SOUND_FRONTEND(-1, Settings.SET_AUDIONAME, Settings.SET_AUDIOREF, true);
                                     Lights.Update(activeVeh);
                                 }
                                 else if (vehDLS.DoesVehicleHaveLightStage(LightStage.Three)
@@ -203,7 +203,7 @@ namespace DLS.Threads
                                         activeVeh.LightStage = LightStage.Three;
                                     else
                                         activeVeh.LightStage = LightStage.Off;
-                                    NativeFunction.Natives.PLAY_SOUND_FRONTEND(-1, "NAV_UP_DOWN", "HUD_FRONTEND_DEFAULT_SOUNDSET", true);
+                                    NativeFunction.Natives.PLAY_SOUND_FRONTEND(-1, Settings.SET_AUDIONAME, Settings.SET_AUDIOREF, true);
                                     Lights.Update(activeVeh);
                                 }
                                 else if (Controls.IsDLSControlDown(DLSControls.LIGHT_TOGGLE))
@@ -249,7 +249,7 @@ namespace DLS.Threads
                                 else if (Controls.IsDLSControlDown(DLSControls.LIGHT_SBURN)
                                     && vehDLS.SpecialModes.SteadyBurn.SteadyBurnEnabled.ToBoolean())
                                 {
-                                    NativeFunction.Natives.PLAY_SOUND_FRONTEND(-1, "NAV_UP_DOWN", "HUD_FRONTEND_DEFAULT_SOUNDSET", true);
+                                    NativeFunction.Natives.PLAY_SOUND_FRONTEND(-1, Settings.SET_AUDIONAME, Settings.SET_AUDIOREF, true);
                                     activeVeh.SBOn = !activeVeh.SBOn;
                                     if (activeVeh.SBOn && activeVeh.LightStage == LightStage.Off)
                                     {
@@ -282,13 +282,13 @@ namespace DLS.Threads
                                 }
                                 else if (Controls.IsDLSControlDown(DLSControls.LIGHT_INTLT))
                                 {
-                                    NativeFunction.Natives.PLAY_SOUND_FRONTEND(-1, "NAV_UP_DOWN", "HUD_FRONTEND_DEFAULT_SOUNDSET", true);
+                                    NativeFunction.Natives.PLAY_SOUND_FRONTEND(-1, Settings.SET_AUDIONAME, Settings.SET_AUDIOREF, true);
                                     Lights.ToggleIntLight(activeVeh);
                                 }
                                 else if (Entrypoint.IndEnabled
                                     && Controls.IsDLSControlDown(DLSControls.LIGHT_INDL))
                                 {
-                                    NativeFunction.Natives.PLAY_SOUND_FRONTEND(-1, "NAV_UP_DOWN", "HUD_FRONTEND_DEFAULT_SOUNDSET", true);
+                                    NativeFunction.Natives.PLAY_SOUND_FRONTEND(-1, Settings.SET_AUDIONAME, Settings.SET_AUDIOREF, true);
                                     if (activeVeh.IndStatus == IndStatus.Left)
                                         activeVeh.IndStatus = IndStatus.Off;
                                     else
@@ -298,7 +298,7 @@ namespace DLS.Threads
                                 else if (Entrypoint.IndEnabled
                                     && Controls.IsDLSControlDown(DLSControls.LIGHT_INDR))
                                 {
-                                    NativeFunction.Natives.PLAY_SOUND_FRONTEND(-1, "NAV_UP_DOWN", "HUD_FRONTEND_DEFAULT_SOUNDSET", true);
+                                    NativeFunction.Natives.PLAY_SOUND_FRONTEND(-1, Settings.SET_AUDIONAME, Settings.SET_AUDIOREF, true);
                                     if (activeVeh.IndStatus == IndStatus.Right)
                                         activeVeh.IndStatus = IndStatus.Off;
                                     else
@@ -308,7 +308,7 @@ namespace DLS.Threads
                                 else if (Entrypoint.IndEnabled
                                     && Controls.IsDLSControlDown(DLSControls.LIGHT_HAZRD))
                                 {
-                                    NativeFunction.Natives.PLAY_SOUND_FRONTEND(-1, "NAV_UP_DOWN", "HUD_FRONTEND_DEFAULT_SOUNDSET", true);
+                                    NativeFunction.Natives.PLAY_SOUND_FRONTEND(-1, Settings.SET_AUDIONAME, Settings.SET_AUDIOREF, true);
                                     if (activeVeh.IndStatus == IndStatus.Both)
                                         activeVeh.IndStatus = IndStatus.Off;
                                     else
@@ -635,7 +635,7 @@ namespace DLS.Threads
                                 switch (veh.IsSirenOn)
                                 {
                                     case true:
-                                        NativeFunction.Natives.PLAY_SOUND_FRONTEND(-1, "NAV_UP_DOWN", "HUD_FRONTEND_DEFAULT_SOUNDSET", true);
+                                        NativeFunction.Natives.PLAY_SOUND_FRONTEND(-1, Settings.SET_AUDIONAME, Settings.SET_AUDIOREF, true);
                                         activeVeh.LightStage = LightStage.Off;
                                         veh.IsSirenOn = false;
                                         activeVeh.SirenStage = SirenStage.Off;
@@ -643,7 +643,7 @@ namespace DLS.Threads
                                         Utils.Sirens.Update(activeVeh);
                                         break;
                                     case false:
-                                        NativeFunction.Natives.PLAY_SOUND_FRONTEND(-1, "NAV_UP_DOWN", "HUD_FRONTEND_DEFAULT_SOUNDSET", true);
+                                        NativeFunction.Natives.PLAY_SOUND_FRONTEND(-1, Settings.SET_AUDIONAME, Settings.SET_AUDIOREF, true);
                                         activeVeh.LightStage = LightStage.Three;
                                         veh.IsSirenOn = true;
                                         veh.IsSirenSilent = true;
@@ -652,13 +652,13 @@ namespace DLS.Threads
                             }
                             else if (Controls.IsDLSControlDown(DLSControls.LIGHT_INTLT))
                             {
-                                NativeFunction.Natives.PLAY_SOUND_FRONTEND(-1, "NAV_UP_DOWN", "HUD_FRONTEND_DEFAULT_SOUNDSET", true);
+                                NativeFunction.Natives.PLAY_SOUND_FRONTEND(-1, Settings.SET_AUDIONAME, Settings.SET_AUDIOREF, true);
                                 Lights.ToggleIntLight(activeVeh);
                             }
                             else if (Entrypoint.IndEnabled
                                     && Controls.IsDLSControlDown(DLSControls.LIGHT_INDL))
                             {
-                                NativeFunction.Natives.PLAY_SOUND_FRONTEND(-1, "NAV_UP_DOWN", "HUD_FRONTEND_DEFAULT_SOUNDSET", true);
+                                NativeFunction.Natives.PLAY_SOUND_FRONTEND(-1, Settings.SET_AUDIONAME, Settings.SET_AUDIOREF, true);
                                 if (activeVeh.IndStatus == IndStatus.Left)
                                     activeVeh.IndStatus = IndStatus.Off;
                                 else
@@ -668,7 +668,7 @@ namespace DLS.Threads
                             else if (Entrypoint.IndEnabled
                                     && Controls.IsDLSControlDown(DLSControls.LIGHT_INDR))
                             {
-                                NativeFunction.Natives.PLAY_SOUND_FRONTEND(-1, "NAV_UP_DOWN", "HUD_FRONTEND_DEFAULT_SOUNDSET", true);
+                                NativeFunction.Natives.PLAY_SOUND_FRONTEND(-1, Settings.SET_AUDIONAME, Settings.SET_AUDIOREF, true);
                                 if (activeVeh.IndStatus == IndStatus.Right)
                                     activeVeh.IndStatus = IndStatus.Off;
                                 else
@@ -678,7 +678,7 @@ namespace DLS.Threads
                             else if (Entrypoint.IndEnabled
                                     && Controls.IsDLSControlDown(DLSControls.LIGHT_HAZRD))
                             {
-                                NativeFunction.Natives.PLAY_SOUND_FRONTEND(-1, "NAV_UP_DOWN", "HUD_FRONTEND_DEFAULT_SOUNDSET", true);
+                                NativeFunction.Natives.PLAY_SOUND_FRONTEND(-1, Settings.SET_AUDIONAME, Settings.SET_AUDIOREF, true);
                                 if (activeVeh.IndStatus == IndStatus.Both)
                                     activeVeh.IndStatus = IndStatus.Off;
                                 else
