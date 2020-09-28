@@ -15,6 +15,11 @@ namespace DLS.Utils
                 case LightStage.Off:
                     activeVeh.Vehicle.IsSirenOn = false;
                     activeVeh.SirenStage = SirenStage.Off;
+                    if (activeVeh.AuxOn)
+                    {
+                        Sound.ClearTempSoundID(activeVeh.AuxID);
+                        activeVeh.AuxOn = false;
+                    }                    
                     activeVeh.TAStage = TAStage.Off;
                     activeVeh.SBOn = false;
                     activeVeh.IsScanOn = false;
