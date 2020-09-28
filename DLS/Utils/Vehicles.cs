@@ -183,18 +183,18 @@ namespace DLS.Utils
         public static bool GetSirenKill(ActiveVehicle activeVehicle)
         {
             Vehicle veh = activeVehicle.Vehicle;
+            bool _ = Entrypoint.SirenKill;
             if (veh)
             {
                 DLSModel dlsModel = veh.GetDLS();
                 if (dlsModel != null)
-                {
-                    bool _ = Entrypoint.SirenKill;
+                {                    
                     if (dlsModel.SoundSettings.SirenKillOverride.ToBoolean() == true)
                         _ = dlsModel.SoundSettings.SirenKillOverride.ToBoolean();
                     return _;
                 }
             }
-            return false;
+            return _;
         }
     }
 }
