@@ -112,13 +112,13 @@
 			<!--  R = 00000000000011000000000000001100 -->
 	<TrafficAdvisory>
 		<!-- off, three, four, five, six -->
-		<Type>four</Type>
+		<Type>off</Type>
 		<!-- true, false -->
 		<DivergeOnly>false</DivergeOnly>
 		<!--(OPTIONAL) 1, 2, 3, 4 (custom1), 5(custom2)-->
 		<AutoEnableStages></AutoEnableStages>
 		<!--(OPTIONAL) left, diverge, right -->
-		<DefaultEnabledDirection>left</DefaultEnabledDirection>
+		<DefaultEnabledDirection></DefaultEnabledDirection>
 		<!-- (OPTIONAL)1, 2, 3, 4 (custom1), 5(custom2)-->
 		<AutoDisableStages></AutoDisableStages>
 		<!-- (OPTIONAL) override env lighting color in 0xAARRGGBB format -->
