@@ -206,8 +206,13 @@ namespace DLS.Threads
                                     NativeFunction.Natives.PLAY_SOUND_FRONTEND(-1, Settings.SET_AUDIONAME, Settings.SET_AUDIOREF, true);
                                     Lights.Update(activeVeh);
                                 }
+                                else if (Controls.IsDLSControlDownWithModifier(DLSControls.LIGHT_TOGGLE))
+                                {
+                                    Lights.MoveDownStage(activeVeh);
+                                }
                                 else if (Controls.IsDLSControlDown(DLSControls.LIGHT_TOGGLE))
                                 {
+                                    
                                     Lights.MoveUpStage(activeVeh);
                                 }
                                 else if (Controls.IsDLSControlDown(DLSControls.LIGHT_TADVISOR)

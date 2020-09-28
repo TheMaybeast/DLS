@@ -1104,7 +1104,14 @@ namespace DLS.Utils
         public static void MoveUpStage(ActiveVehicle activeVeh)
         {
             NativeFunction.Natives.PLAY_SOUND_FRONTEND(-1, Settings.SET_AUDIONAME, Settings.SET_AUDIOREF, true);
-            activeVeh.LightStage = activeVeh.Vehicle.GetDLS().AvailableLightStages.NextLightStage(activeVeh.LightStage);
+            activeVeh.LightStage = activeVeh.Vehicle.GetDLS().AvailableLightStages.Next(activeVeh.LightStage);
+            Update(activeVeh);
+        }
+
+        public static void MoveDownStage(ActiveVehicle activeVeh)
+        {
+            NativeFunction.Natives.PLAY_SOUND_FRONTEND(-1, Settings.SET_AUDIONAME, Settings.SET_AUDIOREF, true);
+            activeVeh.LightStage = activeVeh.Vehicle.GetDLS().AvailableLightStages.Previous(activeVeh.LightStage);
             Update(activeVeh);
         }
 
