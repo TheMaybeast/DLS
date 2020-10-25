@@ -69,6 +69,7 @@
     <Compile Include="SirenApply.cs" />
     <Compile Include="SirenSetting.cs" />
     <Compile Include="TextureHash.cs" />
+    <Compile Include="Threads\NPlayerController.cs" />
     <Compile Include="Threads\PlayerController.cs" />
     <Compile Include="DLSModel.cs" />
     <Compile Include="Threads\SpecialModesManager.cs" />

@@ -72,6 +72,7 @@ namespace DLS
         public LightStage TempWailLightStage { get; set; }
         public SirenStage SirenStage { get; set; }
         public TAStage TAStage { get; set; }
+        public bool blktOn { get; set; }
         public bool SBOn { get; set; }
         public bool AuxOn { get; set; }
         public bool HornOn { get; set; }

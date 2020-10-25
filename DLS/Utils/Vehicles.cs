@@ -236,7 +236,7 @@ namespace DLS.Utils
         public static bool GetSirenKill(ActiveVehicle activeVehicle)
         {
             Vehicle veh = activeVehicle.Vehicle;
-            bool _ = Entrypoint.SirenKill;
+            bool _ = Settings.SET_SIRENKILL;
             if (veh)
             {
                 DLSModel dlsModel = veh.GetDLS();

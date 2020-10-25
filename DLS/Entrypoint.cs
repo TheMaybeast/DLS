@@ -28,15 +28,6 @@ namespace DLS
         //If DLS is on Key Lock method
         public static bool keysLocked = false;
 
-        public static bool SCforNDLS = true;
-        public static bool AILightsC = true;
-        public static bool IndEnabled = true;
-        public static bool BLightsEnabled = true;
-        public static bool UIEnabled = true;
-        public static bool SirenKill = false;
-        public static bool PatchExtras = false;
-        public static bool LogToConsole = false;
-
         public static void Main()
         {
             //Initiates Log File
@@ -44,9 +35,6 @@ namespace DLS
 
             // Checks if .ini file is created.
             Settings.IniCheck();
-
-            // Direct logging output to RPH console if configured
-            LogToConsole = Settings.SET_LOGTOCONSOLE;
 
             //Version check and logging.
             FileVersionInfo rphVer = FileVersionInfo.GetVersionInfo("ragepluginhook.exe");
@@ -74,9 +62,6 @@ namespace DLS
             //Loads MPDATA audio
             NativeFunction.Natives.SET_AUDIO_FLAG("LoadMPData", true);
 
-            //If DLS controls lights/sirens on AI vehicles            
-            AILightsC = Settings.SET_AILC;
-
             //Creates player controller
             "Loading: DLS - Player Controller".ToLog();
             GameFiber.StartNew(delegate { PlayerController.Process(); }, "DLS - Player Controller");
@@ -84,7 +69,7 @@ namespace DLS
 
             //Creates special modes managers
             "Loading: DLS - Special Modes Managers".ToLog();
-            if(AILightsC)
+            if(Settings.SET_AILC)
                 GameFiber.StartNew(delegate { SpecialModesManager.ProcessAI(); }, "DLS - Special Modes AI Manager");
             GameFiber.StartNew(delegate { SpecialModesManager.ProcessPlayer(); }, "DLS - Special Modes Player Manager");
             "Loaded: DLS - Special Modes Managers".ToLog();
@@ -94,26 +79,10 @@ namespace DLS
             GameFiber.StartNew(delegate { Threads.CleanupManager.Process(); }, "DLS - Cleanup Manager");
             "Loaded: DLS - Cleanup Manager".ToLog();
 
-            //If DLS controls lights/sirens on non-DLS vehicles
-            SCforNDLS = Settings.SET_SCNDLS;            
-
-            //If DLS controls the indicators          
-            IndEnabled = Settings.SET_INDENABLED;
-
-            //If DLS enables brake lights            
-            BLightsEnabled = Settings.SET_BRAKELIGHT;
-
-            //If DLS UI is enabled
-            UIEnabled = Settings.SET_UIENABLED;
-            if (UIEnabled)
+            if (Settings.UI_ENABLED)
                 UIManager.Process();
 
-            //If Siren Kill is enabled
-            SirenKill = Settings.SET_SIRENKILL;
-
-            //If extra patch is enabled
-            PatchExtras = Settings.SET_PATCHEXTRAS;
-            if (PatchExtras)
+            if (Settings.SET_PATCHEXTRAS)
             {
                 bool patched = ExtraRepairPatch.DisableExtraRepair();
                 if (patched) "Patched extra repair".ToLog();

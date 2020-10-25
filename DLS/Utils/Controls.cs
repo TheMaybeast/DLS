@@ -22,7 +22,7 @@ namespace DLS.Utils
             {
                 case DLSControls.SIREN_TOGGLE:
                     return Game.IsKeyDown(Settings.SIREN_TOGGLE)
-                        || Game.IsControllerButtonDown(ControllerButtons.DPadDown);
+                        || Game.IsControllerButtonDown(Settings.SIREN_C_TOGGLE);
                 case DLSControls.SIREN_TONE1:
                     return Game.IsKeyDown(Settings.SIREN_TONE1);
                 case DLSControls.SIREN_TONE2:
@@ -35,17 +35,17 @@ namespace DLS.Utils
                     return Game.IsKeyDown(Settings.SIREN_SCAN);
                 case DLSControls.SIREN_HORN:
                     return Game.IsKeyDownRightNow(Settings.SIREN_HORN)
-                        || Game.IsControllerButtonDownRightNow(ControllerButtons.LeftThumb)
+                        || Game.IsControllerButtonDownRightNow(Settings.SIREN_C_HORN)
                         || Game.IsControlPressed(2, GameControl.VehicleHorn);
                 case DLSControls.SIREN_AUX:
                     return Game.IsKeyDown(Settings.SIREN_AUX)
-                        || Game.IsControllerButtonDown(ControllerButtons.DPadUp);
+                        || Game.IsControllerButtonDown(Settings.SIREN_C_AUX);
                 case DLSControls.SIREN_MAN:
                     return Game.IsKeyDownRightNow(Settings.SIREN_MAN)
-                        || Game.IsControllerButtonDownRightNow(ControllerButtons.B);
+                        || Game.IsControllerButtonDownRightNow(Settings.SIREN_C_MAN);
                 case DLSControls.LIGHT_TOGGLE:
                     return Game.IsKeyDown(Settings.LIGHT_TOGGLE)
-                        || Game.IsControllerButtonDown(ControllerButtons.DPadLeft);
+                        || Game.IsControllerButtonDown(Settings.LIGHT_C_TOGGLE);
                 case DLSControls.LIGHT_TADVISOR:
                     return Game.IsKeyDown(Settings.LIGHT_TADVISOR);
                 case DLSControls.GEN_LOCKALL:
