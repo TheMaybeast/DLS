@@ -1217,7 +1217,7 @@ namespace DLS.Utils
 
         public static SirenStatus GetSirenStatus(ActiveVehicle activeVeh, int sirenID, bool includeBroken = true)
         {
-            Vehicle v = activeVeh.Vehicle;
+            /*Vehicle v = activeVeh.Vehicle;
             string bone = "siren" + sirenID;
             if (v.HasBone(bone) && (includeBroken || v.GetBonePosition(bone).DistanceTo(Vector3.Zero) > 1))
             {
@@ -1229,7 +1229,8 @@ namespace DLS.Utils
                     return SirenStatus.Off;
             }
             else
-                return SirenStatus.None;
+                return SirenStatus.None;*/
+            return SirenStatus.None;
         }
     }
 }
