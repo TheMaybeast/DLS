@@ -34,10 +34,9 @@ namespace DLS
             {
                 bool temp = vehicle.IsSirenOn;
                 vehicle.IsSirenOn = false;
-                //InitialLengths = new float[20];
-                //GameFiber.Yield();
-                // TODO: WAIT FOR RPH FIX
-                /*for (int i = 0; i < InitialLengths.Length; i++)
+                InitialLengths = new float[20];
+                GameFiber.Yield();
+                for (int i = 0; i < InitialLengths.Length; i++)
                 {
                     string bone = "siren" + (i + 1);
                     if (vehicle.HasBone(bone))
@@ -48,7 +47,7 @@ namespace DLS
                     {
                         InitialLengths[i] = 1f;
                     }
-                }*/
+                }
                 vehicle.IsSirenOn = temp;
                 DLSModel vehDLS;
                 if (vehicle)
@@ -85,7 +84,7 @@ namespace DLS
         public TAgroup TAgroup { get; set; }
         public int TApatternCurrentIndex { get; set; }
         public uint CurrentHash { get; set; }
-        //public float[] InitialLengths { get; set; }
+        public float[] InitialLengths { get; set; }
         public EmergencyLighting DefaultEL { get; set; }
         public bool IsSirenSilent { get; set; }
         public bool IsScanOn { get; set; }
