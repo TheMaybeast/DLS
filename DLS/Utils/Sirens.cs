@@ -1,9 +1,13 @@
-﻿using Rage.Native;
+﻿using Rage;
+using Rage.Native;
+using System.Collections.Generic;
 
 namespace DLS.Utils
 {
     internal static class Sirens
     {
+        private static List<SirenStage> defaultSirenStages = new List<SirenStage> { SirenStage.One, SirenStage.Two, SirenStage.Warning, SirenStage.Warning2 };
+
         public static void Update(ActiveVehicle activeVeh, bool dls = true)
         {
             switch (activeVeh.SirenStage)
@@ -46,50 +50,63 @@ namespace DLS.Utils
             }
         }
 
-        public static void MoveUpStage(ActiveVehicle activeVeh, bool isDLS = false, bool isMan = false)
+        public static void MoveUpStage(ActiveVehicle activeVeh, bool isDLS = false, DLSModel dlsModel = null, bool isMan = false)
         {
+            NativeFunction.Natives.PLAY_SOUND_FRONTEND(-1, Settings.SET_AUDIONAME, Settings.SET_AUDIOREF, true);
             if (isDLS)
-            {
-                activeVeh.SirenStage = GetNextStage(activeVeh.SirenStage);
-            }
+                activeVeh.SirenStage = dlsModel.AvailableSirenStages.Next(activeVeh.SirenStage);
             else
-            {
-                switch (activeVeh.SirenStage)
-                {
-                    case SirenStage.Off:
-                        activeVeh.SirenStage = SirenStage.One;
-                        break;
-                    case SirenStage.One:
-                        activeVeh.SirenStage = SirenStage.Two;
-                        break;
-                    case SirenStage.Two:
-                        activeVeh.SirenStage = SirenStage.Warning;
-                        break;
-                    case SirenStage.Warning:
-                        activeVeh.SirenStage = SirenStage.Warning2;
-                        break;
-                    case SirenStage.Warning2:
-                        activeVeh.SirenStage = SirenStage.Off;
-                        break;
-                }
-            }
+                activeVeh.SirenStage = defaultSirenStages.Next(activeVeh.SirenStage);
             Update(activeVeh, isDLS);
         }
 
-        public static SirenStage GetNextStage(SirenStage sirenStage)
+        public static void MoveDownStage(ActiveVehicle activeVeh, bool isDLS = false, DLSModel dlsModel = null, bool isMan = false)
         {
-            if (sirenStage != SirenStage.Warning2)
-            {
-                return sirenStage + 1;
-            }
+            NativeFunction.Natives.PLAY_SOUND_FRONTEND(-1, Settings.SET_AUDIONAME, Settings.SET_AUDIOREF, true);
+            if (isDLS)
+                activeVeh.SirenStage = dlsModel.AvailableSirenStages.Previous(activeVeh.SirenStage);
             else
-            {
-                return SirenStage.One;
-            }
+                activeVeh.SirenStage = defaultSirenStages.Previous(activeVeh.SirenStage);
+            Update(activeVeh, isDLS);
         }
-        public static SirenStage GetNextStage(SirenStage sirenStage, DLSModel vehDLS)
+
+        public static void SetAirManuState(ActiveVehicle activeVeh, bool isDLS, int? newState)
         {
-            return vehDLS.AvailableSirenStages.NextSirenStage(sirenStage, false);
+            if(newState != activeVeh.AirManuState)
+            {
+                if(activeVeh.AirManuID != null)
+                {
+                    Sound.ClearTempSoundID((int)activeVeh.AirManuID);
+                    activeVeh.AirManuID = null;
+                }
+
+                switch (newState)
+                {
+                    case 1:
+                        activeVeh.AirManuID = Sound.TempSoundID();
+                        if (isDLS)
+                            NativeFunction.Natives.PLAY_SOUND_FROM_ENTITY(activeVeh.AirManuID, activeVeh.Vehicle.GetDLS().SoundSettings.Horn, activeVeh.Vehicle, 0, 0, 0);
+                        else
+                            NativeFunction.Natives.PLAY_SOUND_FROM_ENTITY(activeVeh.AirManuID, "SIRENS_AIRHORN", activeVeh.Vehicle, 0, 0, 0);
+                        break;
+                    case 2:
+                        activeVeh.AirManuID = Sound.TempSoundID();
+                        if (isDLS)
+                            NativeFunction.Natives.PLAY_SOUND_FROM_ENTITY(activeVeh.AirManuID, activeVeh.Vehicle.GetDLS().SoundSettings.Tone1, activeVeh.Vehicle, 0, 0, 0);
+                        else
+                            NativeFunction.Natives.PLAY_SOUND_FROM_ENTITY(activeVeh.AirManuID, "VEHICLES_HORNS_SIREN_1", activeVeh.Vehicle, 0, 0, 0);
+                        break;
+                    case 3:
+                        activeVeh.AirManuID = Sound.TempSoundID();
+                        if (isDLS)
+                            NativeFunction.Natives.PLAY_SOUND_FROM_ENTITY(activeVeh.AirManuID, activeVeh.Vehicle.GetDLS().SoundSettings.Tone2, activeVeh.Vehicle, 0, 0, 0);
+                        else
+                            NativeFunction.Natives.PLAY_SOUND_FROM_ENTITY(activeVeh.AirManuID, "VEHICLES_HORNS_SIREN_2", activeVeh.Vehicle, 0, 0, 0);
+                        break;
+                }
+
+                activeVeh.AirManuState = newState;
+            }
         }
     }
 }

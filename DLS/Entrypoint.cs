@@ -64,23 +64,19 @@ namespace DLS
 
             //Creates player controller
             "Loading: DLS - Player Controller".ToLog();
-            GameFiber.StartNew(delegate { PlayerController.Process(); }, "DLS - Player Controller");
+            GameFiber.StartNew(delegate { PlayerController.MainLoop(); }, "DLS - Player Controller");
             "Loaded: DLS - Player Controller".ToLog();
 
             //Creates special modes managers
             "Loading: DLS - Special Modes Managers".ToLog();
             if(Settings.SET_AILC)
                 GameFiber.StartNew(delegate { SpecialModesManager.ProcessAI(); }, "DLS - Special Modes AI Manager");
-            GameFiber.StartNew(delegate { SpecialModesManager.ProcessPlayer(); }, "DLS - Special Modes Player Manager");
             "Loaded: DLS - Special Modes Managers".ToLog();
 
             //Creates cleanup manager
             "Loading: DLS - Cleanup Manager".ToLog();
             GameFiber.StartNew(delegate { Threads.CleanupManager.Process(); }, "DLS - Cleanup Manager");
             "Loaded: DLS - Cleanup Manager".ToLog();
-
-            if (Settings.UI_ENABLED)
-                UIManager.Process();
 
             if (Settings.SET_PATCHEXTRAS)
             {
@@ -92,6 +88,7 @@ namespace DLS
 
         private static void OnUnload(bool isTerminating)
         {
+            "Unloading DLS".ToLog();
             if (UsedSoundIDs.Count > 0)
             {
                 "Unloading used SoundIDs".ToLog();

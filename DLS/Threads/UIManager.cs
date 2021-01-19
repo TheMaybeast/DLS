@@ -223,12 +223,12 @@ namespace DLS.Threads
             {
                 Vehicle veh = UIHelper.currentVehicle;
                 if (UIHelper.IsUIAbleToDisplay && UIHelper.IsVehicleValid && UIHelper.IsPlayerDriver
-                    && (UIHelper.dlsModel != null || Entrypoint.SCforNDLS)
+                    && (UIHelper.dlsModel != null || Settings.SET_AILC)
                     && UIHelper.activeVeh != null)
                 {
                     ActiveVehicle aVeh = UIHelper.activeVeh;
                     Background.Draw(e.Graphics);
-                    if (Entrypoint.IndEnabled)
+                    if (Settings.SET_INDENABLED)
                     {
                         switch (aVeh.IndStatus)
                         {
@@ -377,9 +377,9 @@ namespace DLS.Threads
                             Tawarn_Off.Draw(e.Graphics);
                             break;
                     }
-                    if (PlayerController.hornButtonDown)
+                    /*if (PlayerController.hornButtonDown)
                         Horn_On.Draw(e.Graphics);
-                    else
+                    else*/
                         Horn_Off.Draw(e.Graphics);
                     if (aVeh.SBOn)
                         SB_On.Draw(e.Graphics);
@@ -389,13 +389,13 @@ namespace DLS.Threads
                         Intlt_On.Draw(e.Graphics);
                     else
                         Intlt_Off.Draw(e.Graphics);
-                    if (PlayerController.manButtonDown)
+                    /*if (PlayerController.manButtonDown)
                         Manual_On.Draw(e.Graphics);
-                    else
+                    else*/
                         Manual_Off.Draw(e.Graphics);
-                    if (PlayerController.blktOn)
+                    /*if (PlayerController.blktOn)
                         Blkt_On.Draw(e.Graphics);
-                    else
+                    else*/
                         Blkt_Off.Draw(e.Graphics);
                     if (UIHelper.dlsModel != null)
                     {

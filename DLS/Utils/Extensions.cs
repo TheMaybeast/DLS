@@ -30,7 +30,7 @@ namespace DLS.Utils
                 return Entrypoint.DLSModelsDict[veh.Model];
             return null;
         }
-        internal static ActiveVehicle GetActiveVehicle(this Vehicle veh)
+        internal static ActiveVehicle GetActiveVehicle(this Vehicle veh, bool playerVehicle = false)
         {
             if (!veh)
                 return null;
@@ -39,7 +39,18 @@ namespace DLS.Utils
                 if (Entrypoint.activeVehicles[i].Vehicle == veh)
                     return Entrypoint.activeVehicles[i];
             }
-            return null;
+            ActiveVehicle aVeh = null;
+            if (veh.IsSirenOn)
+            {
+                if (!veh.IsSirenSilent)
+                    aVeh = new ActiveVehicle(veh, playerVehicle, LightStage.Three, SirenStage.One);
+                else
+                    aVeh = new ActiveVehicle(veh, playerVehicle, LightStage.Three, SirenStage.Off);
+            }
+            else
+                aVeh = new ActiveVehicle(veh, playerVehicle);
+            if(aVeh != null) Entrypoint.activeVehicles.Add(aVeh);
+            return aVeh;
         }
         internal static void ToLog(this string log)
         {
@@ -142,17 +153,17 @@ namespace DLS.Utils
             return dlsModel.AvailableSirenStages.Contains(sirenStage);
         }
 
-        internal static T Next<T>(this List<T> list, T currentItem)
+        internal static T Next<T>(this List<T> list, T currentItem, int by = 1)
         {
             int index = list.IndexOf(currentItem);
-            index = (index + 1) % list.Count;
+            index = (index + by) % list.Count;
             return list[index];
         }
 
-        internal static T Previous<T>(this List<T> list, T currentItem)
+        internal static T Previous<T>(this List<T> list, T currentItem, int by = 1)
         {
             int index = list.IndexOf(currentItem);
-            index = (list.Count + index - 1) % list.Count;
+            index = (list.Count + index - by) % list.Count;
             return list[index];
         }
 

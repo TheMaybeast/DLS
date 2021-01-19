@@ -7,35 +7,18 @@ namespace DLS.Utils
     {
         internal static InitializationFile INI = new InitializationFile(@"Plugins\DLS.ini");
 
-        // General
-        public static Keys GEN_MODIFIER { get; } = INI.ReadEnum("Keyboard", "Modifier", Keys.Shift);
-        public static Keys GEN_LOCKALL { get; } = INI.ReadEnum("Keyboard", "LockAll", Keys.Scroll);
-        public static string GEN_DISABLEDS { get; } = INI.ReadString("Keyboard", "Disabled", "80,19,85,86,27,100,164,165");
-
-        // Sirens
-        public static Keys SIREN_TOGGLE { get; } = INI.ReadEnum("Keyboard", "SirenToggle", Keys.G);
-        public static ControllerButtons SIREN_C_TOGGLE { get; } = INI.ReadEnum("Controller", "SirenToggle", ControllerButtons.DPadDown);
-        public static Keys SIREN_TONE1 { get; } = INI.ReadEnum("Keyboard", "Tone1", Keys.D1);
-        public static Keys SIREN_TONE2 { get; } = INI.ReadEnum("Keyboard", "Tone2", Keys.D2);
-        public static Keys SIREN_TONE3 { get; } = INI.ReadEnum("Keyboard", "Tone3", Keys.D3);
-        public static Keys SIREN_TONE4 { get; } = INI.ReadEnum("Keyboard", "Tone4", Keys.D4);
-        public static Keys SIREN_SCAN { get; } = INI.ReadEnum("Keyboard", "Scan", Keys.D5);
-        public static Keys SIREN_AUX { get; } = INI.ReadEnum("Keyboard", "AuxToggle", Keys.D6);
-        public static ControllerButtons SIREN_C_AUX { get; } = INI.ReadEnum("Controller", "AuxToggle", ControllerButtons.DPadUp);
-        public static Keys SIREN_HORN { get; } = INI.ReadEnum("Keyboard", "Horn", Keys.Y);
-        public static ControllerButtons SIREN_C_HORN { get; } = INI.ReadEnum("Controller", "Horn", ControllerButtons.LeftThumb);
-        public static Keys SIREN_MAN { get; } = INI.ReadEnum("Keyboard", "Manual", Keys.T);
-        public static ControllerButtons SIREN_C_MAN { get; } = INI.ReadEnum("Controller", "Manual", ControllerButtons.B);
-
-        // Lights
-        public static Keys LIGHT_TOGGLE { get; } = INI.ReadEnum("Keyboard", "LightStage", Keys.J);
-        public static ControllerButtons LIGHT_C_TOGGLE { get; } = INI.ReadEnum("Controller", "LightStage", ControllerButtons.DPadLeft);
-        public static Keys LIGHT_TADVISOR { get; } = INI.ReadEnum("Keyboard", "TAdvisor", Keys.K);
-        public static Keys LIGHT_SBURN { get; } = INI.ReadEnum("Keyboard", "SteadyBurn", Keys.OemOpenBrackets);
-        public static Keys LIGHT_INTLT { get; } = INI.ReadEnum("Keyboard", "InteriorLT", Keys.OemCloseBrackets);
-        public static Keys LIGHT_INDL { get; } = INI.ReadEnum("Keyboard", "IndL", Keys.OemMinus);
-        public static Keys LIGHT_INDR { get; } = INI.ReadEnum("Keyboard", "IndR", Keys.Oemplus);
-        public static Keys LIGHT_HAZRD { get; } = INI.ReadEnum("Keyboard", "Hazard", Keys.Back);
+        // Controls
+        public static int CON_INDLEFT { get; } = INI.ReadInt32("Controls", "CON_INDLEFT", 100);
+        public static int CON_INDRIGHT { get; } = INI.ReadInt32("Controls", "CON_INDRIGHT", 42);
+        public static int CON_HZRD { get; } = INI.ReadInt32("Controls", "CON_HZRD", 83);
+        public static int CON_NEXTLIGHTS { get; } = INI.ReadInt32("Controls", "CON_NEXTLIGHTS", 85);
+        public static int CON_PREVLIGHTS { get; } = INI.ReadInt32("Controls", "CON_PREVLIGHTS", 157);
+        public static int CON_TOGGLESIREN { get; } = INI.ReadInt32("Controls", "CON_TOGGLESIREN", 19);
+        public static int CON_NEXTSIREN { get; } = INI.ReadInt32("Controls", "CON_NEXTSIREN", 80);
+        public static int CON_PREVSIREN { get; } = INI.ReadInt32("Controls", "CON_PREVSIREN", 73);
+        public static int CON_AUXSIREN { get; } = INI.ReadInt32("Controls", "CON_AUXSIREN", 27);
+        public static int CON_HORN { get; } = INI.ReadInt32("Controls", "CON_HORN", 86);
+        public static int CON_TA { get; } = INI.ReadInt32("Controls", "CON_TA", 245);
 
         // Settings
         public static bool SET_SCNDLS { get; } = INI.ReadBoolean("Settings", "SirenControlNonDLS", true);

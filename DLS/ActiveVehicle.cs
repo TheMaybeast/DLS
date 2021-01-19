@@ -89,6 +89,9 @@ namespace DLS
         public EmergencyLighting DefaultEL { get; set; }
         public bool IsSirenSilent { get; set; }
         public bool IsScanOn { get; set; }
+        public int? AirManuState { get; set; } = null;
+        public int? AirManuID { get; set; } = null;
+        public bool IsUsingManual { get; set; } = false;
     }
 
     public enum LightStage
@@ -104,12 +107,12 @@ namespace DLS
 
     public enum SirenStage
     {
+        Horn = -1,
         Off,
         One,
         Two,
         Warning,
-        Warning2,
-        Horn
+        Warning2        
     }
 
     public enum TAStage

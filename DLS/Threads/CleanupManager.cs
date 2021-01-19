@@ -34,7 +34,9 @@ namespace DLS.Threads
                 {
                     if (!UsedHashes.Contains(hash))
                     {
+#if DEBUG
                         ("Moving " + hash + " to Available Pool").ToLog();
+#endif
                         Entrypoint.AvailablePool.Add(Entrypoint.UsedPool[hash]);
                         Entrypoint.UsedPool.Remove(hash);
                     }

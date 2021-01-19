@@ -45,7 +45,7 @@ namespace DLS.Utils
                             dlsModel.AvailableLightStages.Add(LightStage.Three);
                     }                    
 
-                    dlsModel.AvailableSirenStages.Add(SirenStage.Off);
+                    //dlsModel.AvailableSirenStages.Add(SirenStage.Off);
                     if (dlsModel.SoundSettings.Tone1 != "")
                         dlsModel.AvailableSirenStages.Add(SirenStage.One);
                     if (dlsModel.SoundSettings.Tone2 != "")
@@ -165,14 +165,18 @@ namespace DLS.Utils
             if (Entrypoint.UsedPool.Count > 0 && Entrypoint.UsedPool.ContainsKey(key))
             {
                 eL = Entrypoint.UsedPool[key];
+#if DEBUG
                 ("Allocated \"" + name + "\" (" + key + ") for " + veh.Handle + " from Used Pool").ToLog();
+#endif
             }
             else if (Entrypoint.AvailablePool.Count > 0)
             {
                 eL = Entrypoint.AvailablePool[0];
                 Entrypoint.AvailablePool.Remove(eL);
+#if DEBUG
                 ("Removed \"" + eL.Name + "\" from Available Pool").ToLog();
                 ("Allocated \"" + name + "\" (" + key + ") for " + veh.Handle + " from Available Pool").ToLog();
+#endif
             }
             else
             {
@@ -181,12 +185,16 @@ namespace DLS.Utils
                     Model model = new Model("police");
                     eL = model.EmergencyLighting.Clone();
                     eL.Name = name;
+#if DEBUG
                     ("Created \"" + name + "\" (" + key + ") for " + veh.Handle).ToLog();
+#endif
                 }
                 else
                 {
                     eL = EmergencyLighting.GetByName(name);
+#if DEBUG
                     ("Allocated \"" + name + "\" (" + key + ") for " + veh.Handle + " from Game Memory").ToLog();
+#endif
                 }
             }
             if (activeVeh.LightStage != LightStage.Off && activeVeh.LightStage != LightStage.Empty)

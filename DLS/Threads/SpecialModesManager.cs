@@ -16,7 +16,7 @@ namespace DLS.Threads
             {
                 int checksDone = 0;
 
-                if (Entrypoint.AILightsC)
+                if (Settings.SET_AILC)
                 {
                     Vehicle[] allWorldVehicles = World.GetAllVehicles();
                     foreach (Vehicle veh in allWorldVehicles)
@@ -108,58 +108,6 @@ namespace DLS.Threads
                     if (checksDone % yieldAfterChecks == 0)
                     {
                         GameFiber.Yield();
-                    }
-                }
-                GameFiber.Sleep((int)Math.Max(timeBetweenChecks, Game.GameTime - lastProcessTime));
-                lastProcessTime = Game.GameTime;
-            }
-        }
-
-        public static void ProcessPlayer()
-        {
-            uint lastProcessTime = Game.GameTime;
-            int timeBetweenChecks = 100;
-            while (true)
-            {
-                Vehicle veh = Game.LocalPlayer.Character.CurrentVehicle;
-                if (veh && veh.HasSiren && veh.GetDLS() != null)
-                {
-                    if (veh.GetActiveVehicle() == null)
-                    {
-                        if (veh.IsSirenOn)
-                        {
-                            if (!veh.IsSirenSilent)
-                                Entrypoint.activeVehicles.Add(new ActiveVehicle(veh, true, LightStage.Three, SirenStage.One));
-                            else
-                                Entrypoint.activeVehicles.Add(new ActiveVehicle(veh, true, LightStage.Three, SirenStage.Off));
-                        }
-                        else
-                            Entrypoint.activeVehicles.Add(new ActiveVehicle(veh, true));
-                    }
-                    ActiveVehicle activeVeh = veh.GetActiveVehicle();
-                    DLSModel vehDLS;
-                    if (veh)
-                        vehDLS = veh.GetDLS();
-                    else
-                        vehDLS = null;
-                    if (vehDLS.SpecialModes.WailSetup.WailSetupEnabled.ToBoolean())
-                    {
-                        if (activeVeh.LightStage != LightStage.Off && activeVeh.LightStage != LightStage.Empty
-                            && activeVeh.SirenStage == (SirenStage)vehDLS.SpecialModes.WailSetup.WailSirenTone.ToInt32()
-                            && activeVeh.LightStage != (LightStage)vehDLS.SpecialModes.WailSetup.WailLightStage.ToInt32())
-                        {
-                            activeVeh.TempWailLightStage = activeVeh.LightStage;
-                            activeVeh.LightStage = (LightStage)vehDLS.SpecialModes.WailSetup.WailLightStage.ToInt32();
-                            Lights.Update(activeVeh);
-                            activeVeh.Wailing = true;
-                        }
-                        if (activeVeh.Wailing
-                            && activeVeh.SirenStage != (SirenStage)vehDLS.SpecialModes.WailSetup.WailSirenTone.ToInt32())
-                        {
-                            activeVeh.LightStage = veh.GetActiveVehicle().TempWailLightStage;
-                            Lights.Update(activeVeh);
-                            activeVeh.Wailing = false;
-                        }
                     }
                 }
                 GameFiber.Sleep((int)Math.Max(timeBetweenChecks, Game.GameTime - lastProcessTime));
